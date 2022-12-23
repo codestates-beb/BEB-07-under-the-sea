@@ -6,7 +6,7 @@ function Created() {
     <section>
       
       <div className="created__search">
-        <input type="text" value="" placeholder="Search by name" className="created__search--box">돋보기 그림</input>
+        검색창 <input type="text" value="" placeholder="Search by name" className="created__search--box">돋보기 그림</input>
       </div>
 
       <div className="created__list">

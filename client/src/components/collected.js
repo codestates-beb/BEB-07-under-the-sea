@@ -6,7 +6,7 @@ function Collected() {
     <section>
       
       <div className="collected__search">
-        <input type="text" value="" placeholder="Search by name" className="collected__search--box">돋보기 그림</input>
+        검색창 <input type="text" value="" placeholder="Search by name" className="collected__search--box">돋보기 그림</input>
       </div>
 
       <div className="collected__list">
