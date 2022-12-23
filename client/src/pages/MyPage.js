@@ -24,9 +24,9 @@ function MyPage() {
       
       <div className="myNFT">
         <div className="myNFT__menu">
-          <button className="button__collected">Collected</button>
-          <button className="button__collected">Created</button>
-          {/* collected, created 버튼을 누르면 해당 컴포넌트로 변경 */}
+          <Link to="mypage/collected"><button className="button__collected">Collected</button></Link>
+          <Link to="mypage/created"><button className="button__collected">Created</button></Link>
+          {/* 페이지 전체가 아니라 NFT관련 부분만 변경이 되도록 수정해보기 */}
         </div>
 
       </div>
