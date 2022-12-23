@@ -1,0 +1,11 @@
+.navbar{
+    width: 100%;
+    color: black;
+    background-color: white;
+    margin: 20px;
+    display: inline;
+}
+
+#logo{
+    width: 50px;
+}
