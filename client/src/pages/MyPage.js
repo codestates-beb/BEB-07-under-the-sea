@@ -3,8 +3,14 @@ import { Link } from "react-router-dom";
 import { ReactDOM } from "react";
 import Collected from "../components/collected";
 import Created from "../components/created";
+import { useState } from "react";
 
 function MyPage() {
+  const [myNFT,setMyNFT] = useState('collected')
+
+  const handleClick = (event) => {
+    return setMyNFT(event.target.value);
+  }
 
   return (
     <section className="myInfo">
@@ -24,11 +30,12 @@ function MyPage() {
       
       <div className="myNFT">
         <div className="myNFT__menu">
-          <Link to="mypage/collected"><button className="button__collected">Collected</button></Link>
-          <Link to="mypage/created"><button className="button__collected">Created</button></Link>
-          {/* 페이지 전체가 아니라 NFT관련 부분만 변경이 되도록 수정해보기 */}
+          <button className="button__collected" value='collected'onClick={handleClick}>Collected</button>
+          <button className="button__collected" value='created' onClick={handleClick}>Created</button>
         </div>
-
+        {myNFT === 'collected' ?
+        <Collected /> :
+        <Created />}
       </div>
 
     </section>

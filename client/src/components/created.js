@@ -3,16 +3,13 @@ import React from "react";
 function Created() {
 
   return(
-    <section>
-      
-      <div className="created__search">
-        검색창 <input type="text" value="" placeholder="Search by name" className="created__search--box">돋보기 그림</input>
+    <section className="created__NFT">
+      <div className="created__NFT--search">
+        검색창
       </div>
-
-      <div className="created__list">
-        {/* 검색창에 따라 필터된 발행한 NFT 리스트 */}
+      <div className="created__NFT--list">
+        발행한 NFT 리스트
       </div>
-
     </section>
   ) 
 
