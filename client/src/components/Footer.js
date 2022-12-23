@@ -1,5 +1,7 @@
 import React from "react";
 
 export default function Footer() {
-  return <div>푸터</div>;
+  return <div>
+    <h2>byebye</h2>
+  </div>;
 }
