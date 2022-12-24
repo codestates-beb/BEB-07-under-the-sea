@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { ReactDOM } from "react";
 import Collected from "../components/collected";
 import Created from "../components/created";
 import { useState } from "react";
@@ -16,18 +14,31 @@ function MyPage() {
     return setMyNFT(event.target.value);
   }
 
+  const buttonResult = () => {
+    if(myNFT === 'collected'){
+      return <Collected />
+    }else if(myNFT === 'created'){
+      return <Created />
+    }else{
+      return (
+      <div className="comingsoon">
+        <div className="comingsoon__writing">Coming soon...</div>
+      </div>
+    )}
+  }
+
   return (
     <section className="myInfo">
       
       <div className="myInfo__background">
       {/* 배경사진 */}
-        <img className="myInfo__background--img" src={spurs} alt="스퍼스"  width="100%" height="300" />
+        <img className="myInfo__background--img" src={spurs} alt="스퍼스" />
       </div>
       
       <div className="myInfo__container">
         <div className="myInfo__profile">
           {/* 프로필 사진 */}
-          <img className="myInfo__profile--img" src={hanbando} alt="한반두" width="200" height="200" />
+          <img className="myInfo__profile--img" src={hanbando} alt="한반두" />
         </div>
         <div className="myInfo__detail">
           <div className="myInfo__detail--username">
@@ -44,11 +55,11 @@ function MyPage() {
       <div className="myNFT">
         <div className="myNFT__menu">
           <button className="button__collected" value='collected'onClick={handleClick}>Collected</button>
-          <button className="button__collected" value='created' onClick={handleClick}>Created</button>
+          <button className="button__created" value='created' onClick={handleClick}>Created</button>
+          <button className="button__favorited" value='favorited' onClick={handleClick}>Favorited</button>
+          <button className="button__activity" value='activity' onClick={handleClick}>Activity</button>
         </div>
-        {myNFT === 'collected' ?
-        <Collected /> :
-        <Created />}
+        {buttonResult()}
       </div>
 
     </section>
