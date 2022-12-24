@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage } from "@fortawesome/free-regular-svg-icons";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons"
 import "./MintPage.css";
 
 function MintingPage() {
@@ -47,28 +48,42 @@ function MintingPage() {
       <div>
         <div>
           <label className="label">Name</label>
+          <span className="required-label">*</span>
         </div>
         <div>
-          <input type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Item name" required="" value="" />
-        </div>
-
-        <div>
-          <label className="label">External link</label>
+          <input className="Input-text" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Item name" required="" />
         </div>
 
         <div>
-          <input type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="https://yoursite.io/item/123" required="" value="" />
+          <label className="label">External link</label><br></br>
+          <span className="label-detail" >OpenSea will include a link to this URL on this item's detail page, so that users can click to learn more about it. You are welcome to link to your own webpage with more details.</span>
+        </div>
+
+        <div>
+          <input className="Input-text" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="https://yoursite.io/item/123" required="" />
         </div>
 
 
         <div>
-          <label className="label">Description</label>
+          <label className="label">Description</label><br></br>
+          <span className="label-detail" >The description will be included on the item's detail page underneath its image. Markdown syntax is supported.</span>
         </div>
 
         <div>
-          <input type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Provide a detailed description of your item" required="" value="" />
+          <input className="Input-text-large" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Provide a detailed description of your item" required="" />
         </div>
 
+        <div>
+          <label className="label">Supply</label><br></br>
+          <span className="label-detail" >The number of items that can be minted. No gas cost to you! <FontAwesomeIcon icon={faCircleInfo} /> </span>
+        </div>
+
+        <div>
+          <input className="Input-text" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="1" required="" />
+        </div>
+        <span>
+          <button type="button" className="Submit"> Create </button>
+        </span>
       </div>
     </form>
   </div>
