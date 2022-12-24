@@ -1,38 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faImage } from "@fortawesome/free-regular-svg-icons";
+import "./MintPage.css";
 
-export default function MintingPage() {
-  return <div>
+function MintingPage() {
+  const [imageSrc, setImageSrc] = useState('');
+
+  const encodeFileToBase64 = (fileBlob) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(fileBlob);
+    return new Promise((resolve) => {
+      reader.onload = () => {
+        setImageSrc(reader.result);
+        resolve();
+      };
+    });
+  };
+
+  return <div className="mint-container">
     <header>
-      <h1> Create New Item </h1>
+      <h1 className="title"> Create New Item </h1>
     </header>
     <form>
-      <p>
-        <span>*</span>
+      <p className="label-detail">
+        <span className="required-label">*</span>
         "Required fields"
       </p>
       <div>
 
         <div>
-          <label>"Image, Video, Audio, or 3D Model" </label>
-          <span>File types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV, OGG, GLB, GLTF. Max size: 100 MB</span>
+          <label className="label">Image, Video, Audio, or 3D Model </label>
+          <span className="required-label">*</span><br></br>
+          <span className="label-detail" >File types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV, OGG, GLB, GLTF. Max size: 100 MB</span>
         </div>
 
-        <div role="button"><input type="file" /></div>
+        <label role="button" className="attach-box" shape="squre" >
+          <input type="file" className="media" onChange={(e) => {
+            encodeFileToBase64(e.target.files[0]);
+          }} />
+          <div className="preview">{imageSrc && <img className="preview-img" src={imageSrc} alt="preview-img" />}</div>
+          <FontAwesomeIcon icon={faImage} size="4x" />
+        </label>
 
       </div>
 
       <div>
-
         <div>
-          <label>"Name"</label>
+          <label className="label">Name</label>
         </div>
-
         <div>
           <input type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Item name" required="" value="" />
         </div>
 
         <div>
-          <label>"External link"</label>
+          <label className="label">External link</label>
         </div>
 
         <div>
@@ -41,7 +62,7 @@ export default function MintingPage() {
 
 
         <div>
-          <label>"Description"</label>
+          <label className="label">Description</label>
         </div>
 
         <div>
@@ -52,3 +73,5 @@ export default function MintingPage() {
     </form>
   </div>
 }
+
+export default MintingPage;
