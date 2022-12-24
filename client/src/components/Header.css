@@ -1,11 +1,43 @@
-.navbar{
+#navbar{
     width: 100%;
     color: black;
     background-color: white;
-    margin: 20px;
-    display: inline;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 
 #logo{
     width: 50px;
+    position:relative;
+    top:20px;
+    left:20px;
+    margin-right: 100px;
+}
+#menu{
+    color: black;
+    text-decoration: none; 
+    font-weight: bold;
+    margin:50px;
+}
+#menu:hover{
+    color: lightblue;
+}
+#search{
+    width:300px;
+    height: 20px;
+    margin:50px;
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+#wallet{
+    margin:50px;
+    background-color: lightblue;
+    border: none;
+    height:30px;
+    border-radius: 10px;
+    color:white;
+}
+#wallet:hover{
+    background-color: blue;
+    cursor: pointer;
 }
