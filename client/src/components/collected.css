@@ -1,0 +1,27 @@
+.collected__NFT--searchbox{
+  position: relative;
+  top: 30px;
+}
+
+.collected__NFT--search__button{
+  position: relative;
+  top: 30px;
+}
+
+.collected__NFT--list{
+  position: relative;
+  top: 40px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: rgba(128, 128, 128, 0.265);
+  width: 90vw;
+  height: 30vw;
+}
+
+.collected__noitems{
+  position: relative;
+  top: 100px;
+  left: 35vw;
+  font-size: 30px;
+  color: rgb(3, 30, 87);
+}

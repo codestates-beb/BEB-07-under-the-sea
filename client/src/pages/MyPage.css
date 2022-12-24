@@ -1,8 +1,38 @@
+.comingsoon{
+  position: relative;
+  top: 40px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: rgba(128, 128, 128, 0.265);
+  width: 90vw;
+  height: 30vw;
+}
+
+.comingsoon__writing{
+  position: relative;
+  top: 100px;
+  left: 38vw;
+  font-size: 30px;
+  color: rgb(3, 30, 87);
+}
+
+.myInfo__background{
+  width: 100vw; 
+  height: 300px;
+}
+
+.myInfo__background--img{
+  width: 100vw; 
+  height: 300px;
+}
+
 .myInfo__profile--img{
   border-radius: 100%;
   border-style: solid;
   border-width: 5px;
   border-color: aliceblue;
+  width: 200px; 
+  height: 200px;
 }
 
 .myInfo__profile{
@@ -44,5 +74,6 @@
 .myNFT{
   position: relative;
   left: 50px;
-  top: 100px;
+  top: 50px;
 }
+
