@@ -1,8 +1,26 @@
 .Footer{
-    position: fixed;
+    position:absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: black;
+    color: white;
+}
+.row{
+    display: grid;
+    column-gap: 100px;
+    grid-template-columns: auto auto auto auto;
+}
+.col{
+    grid-column: auto;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+#description{
+    width:300px;
+}
+#col4{
     color: white;
 }
