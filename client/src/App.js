@@ -6,8 +6,6 @@ import MintPage from './pages/MintPage'
 import MarketPlacePage from './pages/MarketPlacePage';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Collected from './components/collected';
-import Created from './components/created';
 
 function App() {
   return (
