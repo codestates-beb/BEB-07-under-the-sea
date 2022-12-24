@@ -1,0 +1,108 @@
+.mint-container {
+    width: 646px;
+    max-width: 100%;
+    padding: 24px;
+    margin: 0px auto;
+    box-sizing: border-box;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: 0px;
+    color: rgb(4, 17, 29);
+    margin-bottom: 16px;
+    line-height: 110%;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+}
+
+.required-label {
+    color: rgb(235, 87, 87);
+    box-sizing: border-box;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: sans-serif;
+    line-height: 1.5;
+    padding-right: 3px;
+}
+
+.label-detail {
+    font-weight: 500;
+    font-size: 12px;
+    color: rgb(112, 122, 131);
+    box-sizing: border-box;
+    font-family: sans-serif;
+    line-height: 1.5;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.label {
+    color: rgb(53, 56, 64);
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 4px;
+    font-family: sans-serif;
+    line-height: 1.5;
+    ;
+    box-sizing: border-box;
+}
+
+.attach-box {
+    position: relative;
+    padding: 4px;
+    cursor: pointer;
+    border: 3px dashed rgb(204, 204, 204);
+    border-radius: 10px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 257px;
+    width: 350px;
+    display: flex;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.media {
+    display: none;
+    color: inherit;
+    font: inherit;
+    margin: 0px;
+    box-sizing: border-box;
+    appearance: none;
+    background-color: initial;
+    cursor: default;
+    text-overflow: ellipsis;
+    white-space: pre;
+    text-align: start !important;
+    padding: initial;
+    border: initial;
+    overflow: hidden !important;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    border-radius: 10px;
+}
+
+.preview {
+    position: absolute;
+}
+
+.preview-img {
+    width: auto !important;
+    height: auto;
+    max-width: 100%;
+    position: relative;
+}
