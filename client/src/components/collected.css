@@ -23,7 +23,7 @@
   transition-property: color;
 }
 
-.created__NFT--search__button:hover{
+.collected__NFT--search__button:hover{
   color: rgb(3, 30, 87);
 }
 
