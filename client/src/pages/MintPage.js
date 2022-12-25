@@ -18,6 +18,16 @@ function MintingPage() {
     });
   };
 
+  const [choice, setChoice] = useState("Ethereum");
+  const networks = ["Ethereum", "Polygon", "Klaytn", "Goerli", "Baobab"]
+  const options = networks.map((network) => {
+    return <option value={network}>{network}</option>
+  })
+
+  const handleNetwork = (event) => {
+    setChoice(event.target.value)
+  };
+
   return <div className="mint-container">
     <header>
       <h1 className="title"> Create New Item </h1>
@@ -46,7 +56,7 @@ function MintingPage() {
       </div>
 
       <div>
-        <div>
+        <div className="input-area">
           <label className="label">Name</label>
           <span className="required-label">*</span>
         </div>
@@ -54,7 +64,7 @@ function MintingPage() {
           <input className="Input-text" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Item name" required="" />
         </div>
 
-        <div>
+        <div className="input-area">
           <label className="label">External link</label><br></br>
           <span className="label-detail" >OpenSea will include a link to this URL on this item's detail page, so that users can click to learn more about it. You are welcome to link to your own webpage with more details.</span>
         </div>
@@ -64,7 +74,7 @@ function MintingPage() {
         </div>
 
 
-        <div>
+        <div className="input-area">
           <label className="label">Description</label><br></br>
           <span className="label-detail" >The description will be included on the item's detail page underneath its image. Markdown syntax is supported.</span>
         </div>
@@ -73,7 +83,7 @@ function MintingPage() {
           <input className="Input-text-large" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Provide a detailed description of your item" required="" />
         </div>
 
-        <div>
+        <div className="input-area">
           <label className="label">Supply</label><br></br>
           <span className="label-detail" >The number of items that can be minted. No gas cost to you! <FontAwesomeIcon icon={faCircleInfo} /> </span>
         </div>
@@ -81,9 +91,22 @@ function MintingPage() {
         <div>
           <input className="Input-text" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="1" required="" />
         </div>
-        <span>
-          <button type="button" className="Submit"> Create </button>
-        </span>
+
+        <div className="input-area">
+          <label className="label">Blockchain</label><br></br>
+        </div>
+
+        <div>
+          <select onChange={handleNetwork} className="Input-text" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="1" required=""> {options}</select>
+        </div>
+
+        <div className="input-area">
+          <span>
+            <button type="button" className="Submit"> Create </button>
+          </span>
+        </div>
+
+
       </div>
     </form>
   </div>
