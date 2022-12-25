@@ -112,6 +112,10 @@
     max-width: 100%;
 }
 
+.input-area {
+    padding-top: 10px;
+}
+
 .Input-text {
     border-radius: 10px;
     border: 2px solid rgb(229, 232, 235);
