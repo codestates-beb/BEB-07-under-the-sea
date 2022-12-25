@@ -4,7 +4,7 @@
   border-style: solid;
   border-radius: 20px;
   border-color: rgba(128, 128, 128, 0.265);
-  width: 90vw;
+  width: 85vw;
   height: 30vw;
 }
 
@@ -30,6 +30,22 @@
   height: 300px;
 }
 
+.myInfo__background--img:hover{
+  filter: brightness(50%);
+}
+
+.profile__upload{
+  display: none;
+  margin: 0px;
+  appearance: none;
+}
+
+.myInfo__profile{
+  position: absolute;
+  left: 50px;
+  top: 250px;
+}
+
 .myInfo__profile--img{
   border-radius: 100%;
   border-style: solid;
@@ -39,10 +55,8 @@
   height: 200px;
 }
 
-.myInfo__profile{
-  position: absolute;
-  left: 50px;
-  top: 250px;
+.myInfo__profile--img:hover{
+  filter: brightness(50%);
 }
 
 .myInfo__detail{
@@ -83,7 +97,9 @@
 }
 
  .myNFT__menu{
-  width: 90vw;
+  width: 85vw;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(128, 128, 128, 0.265);
  }
 
 .button__collected, .button__created, .button__favorited, .button__activity{
@@ -96,6 +112,19 @@
   font-size: 15px;
   font-weight: bold;
   color: grey;
+  transition-property: color;
+}
+
+.button__collected--clicked, .button__created--clicked{
+  width: 100px;
+  height: 40px;
+  text-decoration: none; 
+  background-color: white;
+  border: none;
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(3, 30, 87);
   transition-property: color;
 }
 

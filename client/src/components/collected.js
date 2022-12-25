@@ -13,6 +13,7 @@ function Collected() {
 
   return(
     <section className="collected__NFT">
+      <div className="collected__menuline"></div>
       <div className="collected__NFT--search">
         <input className="collected__NFT--searchbox" 
         type="text" 
