@@ -1,3 +1,12 @@
+.collected__menuline{
+  border-style: solid;
+  border-color: rgb(3, 30, 87);
+  position: relative;
+  left: 9px;
+  top: -3px;
+  width: 80px;
+}
+
 .collected__NFT--searchbox{
   position: relative;
   top: 30px;
@@ -33,7 +42,7 @@
   border-style: solid;
   border-radius: 20px;
   border-color: rgba(128, 128, 128, 0.265);
-  width: 90vw;
+  width: 85vw;
   height: 30vw;
 }
 

@@ -27,19 +27,32 @@ function MyPage() {
     )}
   }
 
+  const ifCollectedClicked = () => {
+    if(myNFT === 'collected') return 'button__collected--clicked'
+    else{return 'button__collected'}
+  }
+
+  const ifCreatedClicked = () => {
+    if(myNFT === 'created') return 'button__created--clicked'
+    else{return 'button__created'}
+  }
+
   return (
     <section className="myInfo">
       
       <div className="myInfo__background">
-      {/* 배경사진 */}
-        <img className="myInfo__background--img" src={spurs} alt="스퍼스" />
+        {/* 배경사진 */}
+        <img className="myInfo__background--img" src={spurs} alt="스퍼스" />        
       </div>
       
       <div className="myInfo__container">
+
         <div className="myInfo__profile">
+          <input type="file" className="profile__upload" />
           {/* 프로필 사진 */}
           <img className="myInfo__profile--img" src={hanbando} alt="한반두" />
         </div>
+
         <div className="myInfo__detail">
           <div className="myInfo__detail--username">
             Unnamed{/*사용자 이름*/}
@@ -54,8 +67,8 @@ function MyPage() {
       
       <div className="myNFT">
         <div className="myNFT__menu">
-          <button className="button__collected" value='collected'onClick={handleClick}>Collected</button>
-          <button className="button__created" value='created' onClick={handleClick}>Created</button>
+          <button className={ifCollectedClicked()} value='collected'onClick={handleClick}>Collected</button>
+          <button className={ifCreatedClicked()} value='created' onClick={handleClick}>Created</button>
           <button className="button__favorited" value='favorited' onClick={handleClick}>Favorited</button>
           <button className="button__activity" value='activity' onClick={handleClick}>Activity</button>
         </div>
