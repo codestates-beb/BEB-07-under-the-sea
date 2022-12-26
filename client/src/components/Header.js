@@ -36,8 +36,7 @@ export default function Header() {
       <Link to="/mintpage" id="menu">Create</Link>
       <Link to="/marketplace" id="menu">Marketplace</Link>
       <Link to="/mypage" id="menu">MyPage</Link>
-      <button id="wallet" onClick={()=>{connectWallet()}}> {account? "Disconnect Metamask" :"Connect Metamask"} </button>
-      <p className="userInfo">{account}</p>
+      <button id="wallet" onClick={()=>{connectWallet()}}> {account? account :"Connect Metamask"} </button>
     </div>
   ) 
 
