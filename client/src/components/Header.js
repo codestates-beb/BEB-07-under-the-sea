@@ -32,13 +32,16 @@ export default function Header() {
     setIsConnected(true)
 
   }
+
+  const mypageUrl = `/mypage/${account}`;
+
   return(
     <div id="navbar">
       <Link to="/"><img src="./logo.png" alt="logo" id="logo"></img></Link>
       <input id="search" type="text" placeholder="search" value={searchItem} onChange={handleChange}></input>
       <Link to="/mintpage" id="menu">Create</Link>
       <Link to="/marketplace" id="menu">Marketplace</Link>
-      <Link to="/mypage" id="menu">MyPage</Link>
+      <Link to={mypageUrl} id="menu">MyPage</Link>
       <button id="wallet" onClick={()=>{connectWallet()}}> {isConnected ? account :"Connect Metamask"} </button>
     </div>
   ) 
