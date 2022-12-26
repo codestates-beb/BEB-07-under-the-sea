@@ -33,7 +33,8 @@ export default function Header() {
 
   }
 
-  const mypageUrl = `/mypage/${account}`;
+  // account 값을 전달한 것이 아니라, useParams를 이용한 것이 문제될 것은 없는지 고려하기
+  const mypageUrl = `/mypage/${account}`; 
 
   return(
     <div id="navbar">
