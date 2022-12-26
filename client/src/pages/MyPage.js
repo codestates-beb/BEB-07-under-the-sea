@@ -6,9 +6,11 @@ import hanbando from "../assets/hanbando.jpeg"
 import spurs from "../assets/spurs.jpeg"
 import ethereum1 from "../assets/ethereum1.png"
 import "./MyPage.css"
+import { useParams } from "react-router-dom";
 
 function MyPage() {
   const [myNFT,setMyNFT] = useState('collected')
+  const account = `${(useParams().account).slice(0,6)}...${(useParams().account).slice(-4)}`
 
   const handleClick = (event) => {
     return setMyNFT(event.target.value);
@@ -59,7 +61,9 @@ function MyPage() {
           </div>
           <div className="myInfo__detail--account">
             <img className="ethereum1" src={ethereum1} alt="이더리움1" width="25" height="25" />
-            <div className="myInfo__detail--account--address">{"adfsadfasdfdsafa"/*사용자 어카운트 주소*/}</div>
+            <div className="myInfo__detail--account--address">
+              {account /*사용자 어카운트 주소 => useParams에 의한 보안문제 고려해볼것.*/ }
+            </div>
             <div className="myInfo__detail--registereddate">{"Joined December 2022"/*가입날짜*/}</div>
           </div>
         </div>
