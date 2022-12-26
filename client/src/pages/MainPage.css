@@ -1,0 +1,44 @@
+.mainpage{
+    width: 100%;
+    min-height: 100vh;
+    margin-top: 130px;
+    display: grid;
+    align-items: center;
+    place-items: center;
+}
+
+#exploreBTN{
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    padding: 17px 24px;
+    background-color: lightblue;
+    border: none;
+    color: rgb(255, 255, 255);
+    margin-top: 24px;
+    margin-right: 10px;
+}
+#exploreBTN:hover{
+    background-color: blue;
+    cursor: pointer;
+}
+#createBTN{
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    padding: 17px 24px;
+    background-color: lightgray;
+    border: none;
+    color: rgb(255, 255, 255);
+    margin-top: 24px;
+    margin-left: 10px;
+}
+#createBTN:hover{
+    background-color: blue;
+    cursor: pointer;
+}
+

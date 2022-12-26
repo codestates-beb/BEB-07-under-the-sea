@@ -160,13 +160,13 @@
     letter-spacing: 0.01em;
     padding: 17px 24px;
     background-color: lightblue;
-    border: 2px solid lightblue;
+    border: none;
     color: rgb(255, 255, 255);
     margin-top: 24px;
 }
 
 .Submit:hover {
-    background-color: cornflowerblue;
+    background-color: blue;
     cursor: pointer;
 
 }
