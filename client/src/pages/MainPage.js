@@ -10,7 +10,7 @@ export default function MainPage() {
             <h3>World's first and largest NFT marketplace</h3>
             <div className="buttonContainer">
               <Link to="/marketplace"><button id="exploreBTN">Explore</button></Link>
-              <Link to="/mintpage"></Link><button id="createBTN">Create</button>
+              <Link to="/mintpage"><button id="createBTN">Create</button></Link>
             </div>
           </div>
         </div>
@@ -20,7 +20,7 @@ export default function MainPage() {
             <h3>World's first and largest NFT marketplace</h3>
             <div className="buttonContainer">
               <Link to="/marketplace"><button id="exploreBTN">Explore</button></Link>
-              <Link to="/mintpage"></Link><button id="createBTN">Create</button>
+              <Link to="/mintpage"><button id="createBTN">Create</button></Link>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@ export default function MainPage() {
             <h3>World's first and largest NFT marketplace</h3>
             <div className="buttonContainer">
               <Link to="/marketplace"><button id="exploreBTN">Explore</button></Link>
-              <Link to="/mintpage"></Link><button id="createBTN">Create</button>
+              <Link to="/mintpage"><button id="createBTN">Create</button></Link>
             </div>
           </div>
         </div>
