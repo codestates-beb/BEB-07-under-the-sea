@@ -1,0 +1,16 @@
+
+.category_all, .category_etc1, .category_etc2, .category_etc3{
+    position: relative;
+    width: 100px;
+    height: 40px;
+    text-decoration: none; 
+    background-color: white;
+    border: none;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: grey;
+    transition-property: color;
+  }
+
+
