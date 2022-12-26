@@ -8,63 +8,63 @@ import purple from "../assets/collectedImg/purple.png";
 const collectedNFT = [
   {
     imgUrl: choijun,
-    name: "Choijun",
+    name: "choijun",
     collection: "gentleman",
-    price: "1 ETH"
+    price: "0.100 ETH"
   },
   {
     imgUrl: danaka,
-    name: "Danaka",
+    name: "danaka",
     collection: "japanese",
-    price: "1 ETH"
+    price: "0.300 ETH"
   },
   {
     imgUrl: jinyangchul,
-    name: "Jinyangchul",
+    name: "jinyangchul",
     collection: "soonyang",
-    price: "1 ETH"
+    price: "1.000 ETH"
   },
   {
     imgUrl: purple,
-    name: "Purple",
+    name: "purple",
     collection: "color",
-    price: "1 ETH"
+    price: "0.100 ETH"
   },
   {
     imgUrl: cho,
-    name: "Cho",
+    name: "cho",
     collection: "soccer",
-    price: "1 ETH"
+    price: "0.700 ETH"
   },
   {
     imgUrl: choijun,
     name: "Choijun",
     collection: "gentleman",
-    price: "1 ETH"
+    price: "1.000 ETH"
   },
   {
     imgUrl: danaka,
     name: "Danaka",
     collection: "japanese",
-    price: "1 ETH"
+    price: "1.350 ETH"
   },
   {
     imgUrl: jinyangchul,
     name: "Jinyangchul",
     collection: "soonyang",
-    price: "1 ETH"
+    price: "0.155 ETH"
   },
   {
     imgUrl: purple,
     name: "Purple",
     collection: "color",
-    price: "1 ETH"
+    price: "0.111 ETH"
   },
   {
     imgUrl: cho,
     name: "Cho",
     collection: "soccer",
-    price: "1 ETH"
+    price: "1.000 ETH"
   }
 ]
 
