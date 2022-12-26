@@ -40,9 +40,10 @@
   position: relative;
   top: 50px;
   width: 100%;
-  height: 30vw;
   flex-wrap: wrap;
   display: flex;
+  min-height: 100vh;
+  margin-bottom: 280px;
 }
 
 .collected__NFT--item{
@@ -52,15 +53,31 @@
   border-radius: 23px;
   max-width: 250px;
   margin: 20px;
-}
-
-.collected__NFT--itemImg{
-  
+  position: relative;
 }
 
 .collected__NFT--thumbnail{
   max-width: 200px;
   height: 230px;
+}
+
+#name{
+  margin-top: 7px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#collection{
+  margin-top: 2px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+#price{
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .collected__noitems{

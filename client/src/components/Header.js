@@ -34,7 +34,10 @@ export default function Header() {
   }
 
   // account 값을 전달한 것이 아니라, useParams를 이용한 것이 문제될 것은 없는지 고려하기
-  const mypageUrl = `/mypage/${account}`; 
+  const mypageUrl = `/mypage/${account}`;
+  const needConnectionAlert = () => {
+    alert("로그인이 필요합니다.")
+  } 
 
   return(
     <div id="navbar">
@@ -42,7 +45,9 @@ export default function Header() {
       <input id="search" type="text" placeholder="search" value={searchItem} onChange={handleChange}></input>
       <Link to="/mintpage" id="menu">Create</Link>
       <Link to="/marketplace" id="menu">Marketplace</Link>
-      <Link to={mypageUrl} id="menu">MyPage</Link>
+      {isConnected ? <Link to={mypageUrl} id="menu">MyPage</Link> 
+      : <button id="menu__mypage" onClick={needConnectionAlert}>MyPage</button>}
+      
       <button id="wallet" onClick={()=>{connectWallet()}}> {isConnected ? account :"Connect Metamask"} </button>
     </div>
   ) 

@@ -25,6 +25,21 @@
 #menu:hover{
     color: lightblue;
 }
+
+#menu__mypage{
+    color: black;
+    text-decoration: none; 
+    font-weight: bold;
+    font-size: 16px;
+    margin: 45px;
+    background-color: white;
+    border-style: none;
+}
+
+#menu__mypage:hover{
+    color: lightblue;
+}
+
 #search{
     width:300px;
     height: 20px;
@@ -44,7 +59,4 @@
 #wallet:hover{
     background-color: blue;
     cursor: pointer;
-}
-
-.userInfo{
 }

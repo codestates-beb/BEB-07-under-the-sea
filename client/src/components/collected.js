@@ -5,12 +5,20 @@ import json from "../resources/dummyNFT";
 
 function Collected() {
 
-  const [searchNFT, setSearchNFT] = useState()
+  const [searchNFT, setSearchNFT] = useState("")
+  const [filteredNFT, setFilteredNFT] = useState(json)
+
   const handleChange = (event) => {
-    setSearchNFT(event.value.target)
+    setSearchNFT(event.target.value)
   }
 
-  // searchNFT 의 값에 맞는 NFT만 나올 수 있도록 필터링
+  const handleFilteredNFT = () => {
+    const result = json.filter((el) => {
+      return (el.name.toLowerCase()).includes(searchNFT.toLocaleLowerCase())
+    })
+    console.log(result)
+    setFilteredNFT(result)
+  }
 
   return(
     <section className="collected__NFT">
@@ -23,24 +31,24 @@ function Collected() {
         onChange={handleChange}
         />
         {/* 검색 버튼을 누르면 searchNFT와 일치하는 NFT만 나오게 설정 */}
-        <button className="collected__NFT--search__button" value="search">search</button>
+        <button className="collected__NFT--search__button" value="search" onClick={handleFilteredNFT}>search</button>
       </div>
       <div className="collected__NFT--list">
         {/* 필터링 결과 적용하여 아무 item 이 없을 경우 noitem이 나오도록 설정 */}
-        {json.map((el) => {
+        {filteredNFT.map((el) => {
           return (
             <div className="collected__NFT--item">
               <div className="collected__NFT--itemImg">
                 <img className="collected__NFT--thumbnail" src={el.imgUrl}/>
               </div>
-              <p>{el.name}</p>
-              <p>{el.collection}</p>
-              <p>{el.price}</p>
+              <div id="name">{el.name}</div>
+              <div id="collection">{el.collection}</div>
+              <div id="price">{el.price}</div>
             </div>
           )
         })}
         
-        <div className="collected__noitems">No collected items to display</div>
+        {/* NFT가 없을 경우 <div className="collected__noitems">No collected items to display</div>*/}
       </div>
     </section>
   ) 

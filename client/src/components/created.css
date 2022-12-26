@@ -39,17 +39,51 @@
 .created__NFT--list{
   position: relative;
   top: 50px;
-  border-style: solid;
-  border-radius: 20px;
-  border-color: rgba(128, 128, 128, 0.265);
-  width: 85vw;
-  height: 30vw;
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  min-height: 100vh;
+  margin-bottom: 280px;
+}
+
+.created__NFT--item{
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  padding:20px;
+  border-radius: 23px;
+  max-width: 250px;
+  margin: 20px;
+  position: relative;
+}
+
+.created__NFT--thumbnail{
+  max-width: 200px;
+  height: 230px;
+}
+
+#name{
+  margin-top: 7px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#collection{
+  margin-top: 2px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+#price{
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .created__noitems{
   position: relative;
   top: 100px;
-  left: 33vw;
+  left: 32vw;
   font-size: 30px;
   color: rgb(3, 30, 87);
 }
