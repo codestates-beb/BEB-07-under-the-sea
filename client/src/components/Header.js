@@ -22,11 +22,14 @@ export default function Header() {
     }
   },[])
   const [account, setAccount] = useState("");
+  const [isConnected, setIsConnected] = useState(false)
   const connectWallet = async() => {
     const accounts=await window.ethereum.request({
       method: "eth_requestAccounts",
     })
-    setAccount(accounts[0])
+    if(isConnected) setAccount("")
+    else setAccount(accounts[0])
+    setIsConnected(true)
 
   }
   return(
@@ -36,7 +39,7 @@ export default function Header() {
       <Link to="/mintpage" id="menu">Create</Link>
       <Link to="/marketplace" id="menu">Marketplace</Link>
       <Link to="/mypage" id="menu">MyPage</Link>
-      <button id="wallet" onClick={()=>{connectWallet()}}> {account? account :"Connect Metamask"} </button>
+      <button id="wallet" onClick={()=>{connectWallet()}}> {isConnected ? account :"Connect Metamask"} </button>
     </div>
   ) 
 
