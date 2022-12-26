@@ -132,3 +132,6 @@
   color: rgb(3, 30, 87);
 }
 
+.myInfo{
+  min-height: 100vh;
+}
