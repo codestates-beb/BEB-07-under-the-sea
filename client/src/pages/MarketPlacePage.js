@@ -18,7 +18,7 @@ function MarketPlacePage() {
 
 
   return (
-    <div>
+    <div id="marketplace">
       <div classMame="title">
         <h1>Explore collections</h1>
       </div>
