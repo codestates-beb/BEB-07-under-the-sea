@@ -13,7 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<MainPage />} />
-        <Route path='/mypage' element={<MyPage />} />
+        <Route path='/mypage/:account' element={<MyPage />} />
         <Route path='/mintpage' element={<MintPage />} />
         <Route path='/marketplace' element={<MarketPlacePage />} />
       </Routes>
