@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./collected.css";
+import json from "../resources/dummyNFT";
 
 function Collected() {
 
@@ -26,6 +27,19 @@ function Collected() {
       </div>
       <div className="collected__NFT--list">
         {/* 필터링 결과 적용하여 아무 item 이 없을 경우 noitem이 나오도록 설정 */}
+        {json.map((el) => {
+          return (
+            <div className="collected__NFT--item">
+              <div className="collected__NFT--itemImg">
+                <img className="collected__NFT--thumbnail" src={el.imgUrl}/>
+              </div>
+              <p>{el.name}</p>
+              <p>{el.collection}</p>
+              <p>{el.price}</p>
+            </div>
+          )
+        })}
+        
         <div className="collected__noitems">No collected items to display</div>
       </div>
     </section>
