@@ -1,4 +1,5 @@
 #navbar{
+    display: flex;
     position:fixed;
     top:0;
     z-index: 3;
@@ -8,7 +9,9 @@
     background-color: white;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
-
+#menuItems{
+    left: 40%;
+}
 #logo{
     width: 50px;
     position:relative;
@@ -38,6 +41,7 @@
 
 #menu__mypage:hover{
     color: lightblue;
+    cursor:pointer;
 }
 
 #search{

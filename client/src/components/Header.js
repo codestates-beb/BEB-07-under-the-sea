@@ -42,12 +42,14 @@ export default function Header() {
   return(
     <div id="navbar">
       <Link to="/"><img src="./logo.png" alt="logo" id="logo"></img></Link>
-      <input id="search" type="text" placeholder="search" value={searchItem} onChange={handleChange}></input>
+      <div id="menuItems">
+        <div><input id="search" type="text" placeholder="search" value={searchItem} onChange={handleChange}></input>
       <Link to="/mintpage" id="menu">Create</Link>
       <Link to="/marketplace" id="menu">Marketplace</Link>
       {isConnected ? <Link to={mypageUrl} id="menu">MyPage</Link> 
       : <button id="menu__mypage" onClick={needConnectionAlert}>MyPage</button>}
-      
+      </div>
+      </div>
       <button id="wallet" onClick={()=>{connectWallet()}}> {isConnected ? account :"Connect Metamask"} </button>
     </div>
   ) 

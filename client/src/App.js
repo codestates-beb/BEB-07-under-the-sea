@@ -6,6 +6,7 @@ import MintPage from './pages/MintPage'
 import MarketPlacePage from './pages/MarketPlacePage';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import DetailsPage from './pages/DetailsPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/mypage/:account' element={<MyPage />} />
         <Route path='/mintpage' element={<MintPage />} />
         <Route path='/marketplace' element={<MarketPlacePage />} />
+        <Route path='/details' element={<DetailsPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
