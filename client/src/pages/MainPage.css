@@ -3,10 +3,15 @@
     min-height: 100vh;
     margin-top: 130px;
     display: grid;
-    align-items: center;
     place-items: center;
 }
-
+.row{
+    left:50%;
+}
+.intro{
+    display: grid;
+    place-items: center;
+}
 #exploreBTN{
     border-radius: 12px;
     font-size: 16px;
@@ -47,6 +52,9 @@
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
     padding:20px;
     border-radius: 23px;
+}
+.items:hover{
+    cursor: pointer;
 }
 #thumbnail{
     max-width: 300px;
