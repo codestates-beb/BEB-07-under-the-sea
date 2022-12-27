@@ -1,26 +1,15 @@
 import React from "react";
 import "./NFTitem.css";
-import json from "../resources/dummyNFT";
 
-function NFTitem() {
-    return (
-        <div className="row">
-            {json.map((el)=>{
-            return(
-                <div className="items">
-                    <div id="image">
-                        <img src={el.imgUrl} alt="sample" id="thumbnail"></img>
-                    </div>
-                    <div id="name"><h4>{el.name}</h4></div>
-                    <div id="collection"><h5>{el.collection}</h5></div>
-                    <div id="price"><p>{el.price}</p></div>
-                </div>
-            )
-        })}
+const NFTitem = (props) => {
+    return(
+        <div id="itemContainer">
+            <img src={props.imgUrl} id="thumbnail" alt="item img"></img>
+            <h4 id="name">{props.name}</h4>
+            <h5 id="collection">{props.collection}</h5>
+            <p id="price">{props.price}</p>
         </div>
-        
-            
-    );
-};
+    )
+}
 
 export default NFTitem;
