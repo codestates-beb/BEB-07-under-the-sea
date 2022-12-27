@@ -9,7 +9,7 @@ function Created() {
   const [filteredNFT, setFilteredNFT] = useState(json)
 
   const handleChange = (event) => {
-    setSearchNFT(event.value.target)
+    setSearchNFT(event.target.value)
   }
 
   const handleFilteredNFT = () => {
