@@ -1,69 +1,73 @@
-import cho from "../assets/collectedImg/cho.png";
-import choijun from "../assets/collectedImg/choijun.png";
-import danaka from "../assets/collectedImg/danaka.png";
-import jinyangchul from "../assets/collectedImg/jinyangchul.png";
-import purple from "../assets/collectedImg/purple.png";
-
+import rabbit2 from "../assets/collectedImg/1.png";
+import rabbit1 from "../assets/collectedImg/2.png";
+import rabbit3 from "../assets/collectedImg/3.png";
+import rabbit4 from "../assets/collectedImg/4.png";
+import rabbit5 from "../assets/collectedImg/5.png";
+import monkey1 from "../assets/collectedImg/6.png"
+import monkey2 from "../assets/collectedImg/7.png"
+import monkey3 from "../assets/collectedImg/8.png"
+import monkey4 from "../assets/collectedImg/9.png"
+import monkey5 from "../assets/collectedImg/10.png"
 
 const collectedNFT = [
   {
-    imgUrl: choijun,
-    name: "choijun",
-    collection: "gentleman",
+    imgUrl: rabbit1,
+    name: "The Rabbit Saga #1",
+    collection: "The Rabbit Saga",
     price: "0.100 ETH"
   },
   {
-    imgUrl: danaka,
-    name: "danaka",
-    collection: "japanese",
+    imgUrl: rabbit2,
+    name: "The Rabbit Saga #2",
+    collection: "The Rabbit Saga",
     price: "0.300 ETH"
   },
   {
-    imgUrl: jinyangchul,
-    name: "jinyangchul",
-    collection: "soonyang",
+    imgUrl: rabbit3,
+    name: "The Rabbit Saga #3",
+    collection: "The Rabbit Saga",
     price: "1.000 ETH"
   },
   {
-    imgUrl: purple,
-    name: "purple",
-    collection: "color",
+    imgUrl: rabbit4,
+    name: "The Rabbit Saga #4",
+    collection: "The Rabbit Saga",
     price: "0.100 ETH"
   },
   {
-    imgUrl: cho,
-    name: "cho",
-    collection: "soccer",
+    imgUrl: rabbit5,
+    name: "The Rabbit Saga #5",
+    collection: "The Rabbit Saga",
     price: "0.700 ETH"
   },
   {
-    imgUrl: choijun,
-    name: "Choijun",
-    collection: "gentleman",
+    imgUrl: monkey1,
+    name: "001",
+    collection: "Bored Ape Yacht Club",
     price: "1.000 ETH"
   },
   {
-    imgUrl: danaka,
-    name: "Danaka",
-    collection: "japanese",
+    imgUrl: monkey2,
+    name: "002",
+    collection: "Bored Ape Yacht Club",
     price: "1.350 ETH"
   },
   {
-    imgUrl: jinyangchul,
-    name: "Jinyangchul",
-    collection: "soonyang",
+    imgUrl: monkey3,
+    name: "003",
+    collection: "Bored Ape Yacht Club",
     price: "0.155 ETH"
   },
   {
-    imgUrl: purple,
-    name: "Purple",
-    collection: "color",
+    imgUrl: monkey4,
+    name: "004",
+    collection: "Bored Ape Yacht Club",
     price: "0.111 ETH"
   },
   {
-    imgUrl: cho,
-    name: "Cho",
-    collection: "soccer",
+    imgUrl: monkey5,
+    name: "005",
+    collection: "Bored Ape Yacht Club",
     price: "1.000 ETH"
   }
 ]
