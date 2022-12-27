@@ -20,17 +20,25 @@
     margin-right: 100px;
 }
 #menu{
-    color: black;
+    box-shadow: inset 0 0 0 0 lightblue;
+    color: lightblue;
     text-decoration: none; 
     font-weight: bold;
     margin:50px;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 #menu:hover{
-    color: lightblue;
+    color: white;
+    box-shadow: inset 100px 0 0 0 lightblue;
+    cursor: pointer;
 }
 
 #menu__mypage{
-    color: black;
+    box-shadow: inset 0 0 0 0 lightblue;
+    color: lightblue;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
     text-decoration: none; 
     font-weight: bold;
     font-size: 16px;
@@ -40,7 +48,8 @@
 }
 
 #menu__mypage:hover{
-    color: lightblue;
+    color: white;
+    box-shadow: inset 100px 0 0 0 lightblue;
     cursor:pointer;
 }
 
