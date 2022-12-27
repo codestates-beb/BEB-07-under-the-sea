@@ -1,0 +1,51 @@
+#itemContainer{
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    padding:20px;
+    border-radius: 23px;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+#itemContainer:hover{
+    cursor: pointer;
+    animation-name: bounce;
+    -moz-animation-name: bounce;
+}
+#thumbnail{
+    object-fit: cover;
+    width:300px;
+    height:300px;
+}
+
+.row{
+    margin-top:100px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(20%, auto));
+    gap: 20px;
+}
+
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+}

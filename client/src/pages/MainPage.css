@@ -47,24 +47,3 @@
     cursor: pointer;
 }
 
-.items{
-    background-color: white;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-    padding:20px;
-    border-radius: 23px;
-}
-.items:hover{
-    cursor: pointer;
-}
-#thumbnail{
-    max-width: 300px;
-}
-
-.row{
-    margin-top:100px;
-    flex-wrap: wrap;
-    display: flex;
-    align-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(20%, auto));
-    gap: 20px;
-}

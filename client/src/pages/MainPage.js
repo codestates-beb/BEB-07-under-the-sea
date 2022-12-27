@@ -1,6 +1,9 @@
 import React from "react";
 import "./MainPage.css";
 import {Link} from "react-router-dom";
+import Item from "../components/NFTitem"
+import data from "../resources/dummyNFT";
+
 export default function MainPage() {
   return (
     <div className="mainpage">
@@ -15,7 +18,9 @@ export default function MainPage() {
           </div>
         </div>
         <div className="row">
-      
+          {data.map((e)=> (
+            <Item imgUrl={e.imgUrl} name={e.name} collection={e.collection} price={e.price}/>
+          ))}
         </div> 
       </div>    
   );
