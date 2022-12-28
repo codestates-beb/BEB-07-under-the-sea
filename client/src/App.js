@@ -33,10 +33,10 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<MainPage />} />
-        <Route path='/mypage/:account' element={<MyPage />} />
+        <Route path='/mypage/:account' element={<MyPage account={account} />} />
         <Route path='/mintpage' element={<MintPage account={account} />} />
         <Route path='/marketplace' element={<MarketPlacePage />} />
-        <Route exact path='/details:id' component={<DetailsPage />}/>
+        <Route exact path='/details:id' component={<DetailsPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
