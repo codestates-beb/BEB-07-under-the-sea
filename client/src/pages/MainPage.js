@@ -7,7 +7,7 @@ import data from "../resources/dummyNFT";
 export default function MainPage() {
   return (
     <div className="mainpage">
-      <div className="row">
+      <div id="row">
         <div className="intro">
             <h1>Explore, collect, and sell NFTs</h1>
             <h3>World's first and largest NFT marketplace</h3>
@@ -17,7 +17,7 @@ export default function MainPage() {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div id="row2">
           {data.map((e)=> (
             <Item imgUrl={e.imgUrl} name={e.name} collection={e.collection} price={e.price}/>
           ))}
