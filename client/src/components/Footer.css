@@ -18,10 +18,27 @@
     vertical-align: middle;
 
 }
-
+#col1{
+    margin-top:15px;
+}
 #description{
     width:300px;
 }
 #col4{
     color: white;
+}
+#col2{
+    display: grid;
+    place-items: center;
+}
+
+.teamName{
+    text-decoration: none;
+    color: black;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.teamName:hover{
+    background-color: white;
 }
