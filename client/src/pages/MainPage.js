@@ -57,9 +57,8 @@ export default function MainPage() {
             <Link to="/mintpage"><button id="createBTN">Create</button></Link>
           </div>
         </div>
-      </div>
-      {/* <div id="row2">
-          {data.map((e)=> (
+        <div id="row2">
+          {data.reverse().map((e)=> (
             <Item imgUrl={e.imgUrl} name={e.name} collection={e.collection} price={e.price} id={e.id}/>
           ))}
         </div>  */}
