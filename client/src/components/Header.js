@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import {Link} from "react-router-dom";
 import { useState } from "react";
 import Web3 from 'web3';
-
+import logo from "../assets/logo.png"
 import "./Header.css"
 
 export default function Header() {
@@ -41,10 +41,10 @@ export default function Header() {
 
   return(
     <div id="navbar">
-      <Link to="/"><img src="./logo.png" alt="logo" id="logo"></img></Link>
+      <Link to="/"><img src={logo} alt="logo" id="logo"></img></Link>
       <div id="menuItems">
         <div><input id="search" type="text" placeholder="search" value={searchItem} onChange={handleChange}></input>
-      <Link to="/mintpage" id="menu">Create</Link>
+      {isConnected ? <Link to="/mintpage" id="menu">Create</Link> : <button id="menu__mypage" onClick={needConnectionAlert}>Create</button>}
       <Link to="/marketplace" id="menu">Marketplace</Link>
       {isConnected ? <Link to={mypageUrl} id="menu">MyPage</Link> 
       : <button id="menu__mypage" onClick={needConnectionAlert}>MyPage</button>}
