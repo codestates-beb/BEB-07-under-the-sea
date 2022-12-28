@@ -66,7 +66,7 @@ export default function Header() {
     <div id="navbar">
       <Link to="/"><img src={logo} alt="logo" id="logo"></img></Link>
       <div id="menuItems">
-        <div><input id="search" type="text" placeholder="search" value={searchItem} onChange={handleChange}></input>
+        <div><input id="search" type="text" placeholder="Search items, collections, and accounts" value={searchItem} onChange={handleChange}></input>
       {isConnected ? <Link to="/mintpage" id="menu">Create</Link> : <button id="menu__mypage" onClick={needConnectionAlert}>Create</button>}
       <Link to="/marketplace" id="menu">Marketplace</Link>
       {isConnected ? <Link to={mypageUrl} id="menu">MyPage</Link> 
