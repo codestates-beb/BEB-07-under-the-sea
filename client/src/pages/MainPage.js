@@ -3,6 +3,8 @@ import "./MainPage.css";
 import { Link } from "react-router-dom";
 import { tokenContract } from "../erc721Abi";
 import TokenList from "../components/TokenList";
+import data from "../resources/dummyNFT";
+import Item from "../components/NFTitem";
 
 
 export default function MainPage() {
@@ -57,14 +59,15 @@ export default function MainPage() {
             <Link to="/mintpage"><button id="createBTN">Create</button></Link>
           </div>
         </div>
-        <div id="row2">
-          {data.reverse().map((e)=> (
-            <Item imgUrl={e.imgUrl} name={e.name} collection={e.collection} price={e.price} id={e.id}/>
-          ))}
-        </div>  */}
-      <div>
-        <TokenList erc721list={erc721list} />
       </div>
+      <div id="row2">
+        {data.slice(0).reverse().map((e) => (
+          <Item imgUrl={e.imgUrl} name={e.name} collection={e.collection} price={e.price} id={e.id} />
+        ))}
+      </div>
+      {/* <div>
+        <TokenList erc721list={erc721list} />
+      </div> */}
     </div>
   );
 }
