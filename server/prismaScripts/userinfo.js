@@ -30,10 +30,58 @@ const readUserByAddress = async (wallet_address) => {
   }
 }
 
+const updateProfileImg = async (data) => {
+  try{
+    const { wallet_address, profile_img } = data
+    const updateRes = await prisma.userInfo.update({
+      where: { wallet_address },
+      data: { profile_img }
+    });
+    //console.log(updateRes)
+    return updateRes
+  }catch(err){
+    console.log(err)
+  }
+}
+
+const updateBackgroundImg = async (data) => {
+  try{
+    const { wallet_address, background_img } = data
+    const updateRes = await prisma.userInfo.update({
+      where: { wallet_address },
+      data: { background_img }
+    });
+    //console.log(updateRes)
+    return updateRes
+  }catch(err){
+    console.log(err)
+  }
+}
+
+const updateUsername = async (data) => {
+  try{
+    const { wallet_address, username } = data
+    const updateRes = await prisma.userInfo.update({
+      where: { wallet_address },
+      data: { username }
+    });
+    //console.log(updateRes)
+    return updateRes
+  }catch(err){
+    console.log(err)
+  }
+}
+
+
 // createUser({username: 'hyuntae', wallet_address: '0x123'})
 // readUserByAddress('0x123')
+// updateProfileImg({wallet_address: "0x123", profile_img: "www.naver.com"});
+// updateUsername({wallet_address: "0x123", username: "kht"})
 
 module.exports = {
   createUser,
-  readUserByAddress
+  readUserByAddress,
+  updateProfileImg,
+  updateBackgroundImg,
+  updateUsername
 };

@@ -14,7 +14,7 @@ model UserInfo {
   id Int @id @default(autoincrement())
   username String @default("Unnamed")
   wallet_address String @unique
-  backgound_img String @default("")
+  background_img String @default("")
   profile_img String @default("")
 }
 
