@@ -36,7 +36,8 @@
     color: rgb(3, 30, 87);
 }
 
-.created__NFT--list {
+.created__NFT--list,
+.erc721list {
     position: relative;
     top: 50px;
     width: 100%;
@@ -47,7 +48,7 @@
 }
 
 .created__NFT--item,
-.erc721list {
+.erc721token {
     background-color: white;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
     padding: 20px;
