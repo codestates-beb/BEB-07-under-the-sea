@@ -15,70 +15,80 @@ const collectedNFT = [
     imgUrl: rabbit1,
     name: "The Rabbit Saga #1",
     collection: "The Rabbit Saga",
-    price: "0.100 ETH"
+    price: "0.100 ETH",
+    description: "The metaverse is here! Become a part of the City of art and Heroes. No division by rarity. Each nft is unique. Only you can decide what is rare and what is not. By purchasing NFT, you will automatically mint it and become a full-fledged part of Meta Art City. People have always been attracted by the art. So now the time has come to pursue the better future together."
   },
   {
     id:2,
     imgUrl: rabbit2,
     name: "The Rabbit Saga #2",
     collection: "The Rabbit Saga",
-    price: "0.300 ETH"
+    price: "0.300 ETH",
+    description: "The metaverse is here! Become a part of the City of art and Heroes. No division by rarity. Each nft is unique. Only you can decide what is rare and what is not. By purchasing NFT, you will automatically mint it and become a full-fledged part of Meta Art City. People have always been attracted by the art. So now the time has come to pursue the better future together."
   },
   {
     id:3,
     imgUrl: rabbit3,
     name: "The Rabbit Saga #3",
     collection: "The Rabbit Saga",
-    price: "1.000 ETH"
+    price: "1.000 ETH",
+    description: "The metaverse is here! Become a part of the City of art and Heroes. No division by rarity. Each nft is unique. Only you can decide what is rare and what is not. By purchasing NFT, you will automatically mint it and become a full-fledged part of Meta Art City. People have always been attracted by the art. So now the time has come to pursue the better future together."
   },
   {
     id:4,
     imgUrl: rabbit4,
     name: "The Rabbit Saga #4",
     collection: "The Rabbit Saga",
-    price: "0.100 ETH"
+    price: "0.100 ETH",
+    description: "The metaverse is here! Become a part of the City of art and Heroes. No division by rarity. Each nft is unique. Only you can decide what is rare and what is not. By purchasing NFT, you will automatically mint it and become a full-fledged part of Meta Art City. People have always been attracted by the art. So now the time has come to pursue the better future together."
   },
   {
     id:5,
     imgUrl: rabbit5,
     name: "The Rabbit Saga #5",
     collection: "The Rabbit Saga",
-    price: "0.700 ETH"
+    price: "0.700 ETH",
+    description: "The metaverse is here! Become a part of the City of art and Heroes. No division by rarity. Each nft is unique. Only you can decide what is rare and what is not. By purchasing NFT, you will automatically mint it and become a full-fledged part of Meta Art City. People have always been attracted by the art. So now the time has come to pursue the better future together."
   },
   {
     id:6,
     imgUrl: monkey1,
     name: "001",
     collection: "Bored Ape Yacht Club",
-    price: "1.000 ETH"
+    price: "1.000 ETH",
+    description: "The Bored Ape Yacht Club is a collection of 10,000 unique Bored Ape NFTs— unique digital collectibles living on the Ethereum blockchain. Your Bored Ape doubles as your Yacht Club membership card, and grants access to members-only benefits, the first of which is access to THE BATHROOM, a collaborative graffiti board. Future areas and perks can be unlocked by the community through roadmap activation. Visit www.BoredApeYachtClub.com for more details."
   },
   {
     id:7,
     imgUrl: monkey2,
     name: "002",
     collection: "Bored Ape Yacht Club",
-    price: "1.350 ETH"
+    price: "1.350 ETH",
+    description: "The Bored Ape Yacht Club is a collection of 10,000 unique Bored Ape NFTs— unique digital collectibles living on the Ethereum blockchain. Your Bored Ape doubles as your Yacht Club membership card, and grants access to members-only benefits, the first of which is access to THE BATHROOM, a collaborative graffiti board. Future areas and perks can be unlocked by the community through roadmap activation. Visit www.BoredApeYachtClub.com for more details."
   },
   {
     id:8,
     imgUrl: monkey3,
     name: "003",
     collection: "Bored Ape Yacht Club",
-    price: "0.155 ETH"
+    price: "0.155 ETH",
+    description: "The Bored Ape Yacht Club is a collection of 10,000 unique Bored Ape NFTs— unique digital collectibles living on the Ethereum blockchain. Your Bored Ape doubles as your Yacht Club membership card, and grants access to members-only benefits, the first of which is access to THE BATHROOM, a collaborative graffiti board. Future areas and perks can be unlocked by the community through roadmap activation. Visit www.BoredApeYachtClub.com for more details."
   },
   {
     id:9,
     imgUrl: monkey4,
     name: "004",
     collection: "Bored Ape Yacht Club",
-    price: "0.111 ETH"
+    price: "0.111 ETH",
+    description: "The Bored Ape Yacht Club is a collection of 10,000 unique Bored Ape NFTs— unique digital collectibles living on the Ethereum blockchain. Your Bored Ape doubles as your Yacht Club membership card, and grants access to members-only benefits, the first of which is access to THE BATHROOM, a collaborative graffiti board. Future areas and perks can be unlocked by the community through roadmap activation. Visit www.BoredApeYachtClub.com for more details."
   },
   {
     id:10,
     imgUrl: monkey5,
     name: "005",
     collection: "Bored Ape Yacht Club",
-    price: "1.000 ETH"
+    price: "1.000 ETH",
+    description: "The Bored Ape Yacht Club is a collection of 10,000 unique Bored Ape NFTs— unique digital collectibles living on the Ethereum blockchain. Your Bored Ape doubles as your Yacht Club membership card, and grants access to members-only benefits, the first of which is access to THE BATHROOM, a collaborative graffiti board. Future areas and perks can be unlocked by the community through roadmap activation. Visit www.BoredApeYachtClub.com for more details."
   }
 ]
 
