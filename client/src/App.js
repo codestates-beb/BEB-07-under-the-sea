@@ -8,6 +8,7 @@ import MarketPlacePage from './pages/MarketPlacePage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import DetailsPage from './pages/DetailsPage';
+import axios from 'axios'
 
 function App() {
   const [account, setAccount] = useState("");
@@ -18,11 +19,28 @@ function App() {
           method: "eth_requestAccounts",
         });
         setAccount(account[0]);
+        console.log(account)
+        check_userinfo(account);
       }
     } catch (err) {
       console.error(err);
     }
   };
+
+  const check_userinfo = async (address) => {
+    try{
+      const userinfo = await axios.get(`http://local:8080/userinfo/${address}`)
+      console.log(userinfo.data)
+      if(!userinfo.data){
+        const createUser = await axios.post(`http://localhost:8080/userinfo/createuser`, {wallet_address: address})
+        if(!createUser.data){
+          console.error("Error: POST request 양식이 올바르지 않습니다.")
+        }
+      }
+    }catch(err){
+      console.log(err)
+    }
+  }
 
   useEffect(() => {
     getAccount();
@@ -30,7 +48,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header check_userinfo={check_userinfo}/>
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/mypage/:account' element={<MyPage account={account} />} />
