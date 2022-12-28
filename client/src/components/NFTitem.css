@@ -10,6 +10,9 @@
     -webkit-transition-property: transform;
     transition-property: transform;
 }
+#NFTlink{
+    text-decoration: none;
+}
 #itemContainer:hover{
     cursor: pointer;
     -webkit-transform: scale(1.05);
@@ -19,15 +22,7 @@
     object-fit: cover;
     width:200px;
     height:200px;
-}
-
-.row{
-    margin-top:100px;
-    flex-wrap: wrap;
-    display: flex;
-    align-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(20%, auto));
-    gap: 20px;
+    border-radius: 20px;
 }
 
 @keyframes bounce {
@@ -46,4 +41,19 @@
 		-ms-transform:     translateY(-15px);
 		transform:         translateY(-15px)
 	}
+}
+
+#NFTname{
+    font-size: 20px;
+    color: black;
+    
+}
+#NFTcollection{
+    font-size: 15px;
+    color:gray;
+}
+
+#NFTprice{
+    font-size:15px;
+    color:black;
 }

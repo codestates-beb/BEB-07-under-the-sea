@@ -19,7 +19,7 @@ export default function MainPage() {
         </div>
         <div id="row2">
           {data.map((e)=> (
-            <Item imgUrl={e.imgUrl} name={e.name} collection={e.collection} price={e.price}/>
+            <Item imgUrl={e.imgUrl} name={e.name} collection={e.collection} price={e.price} id={e.id}/>
           ))}
         </div> 
       </div>    
