@@ -3,13 +3,16 @@ import {Link} from "react-router-dom";
 import { useState } from "react";
 import Web3 from 'web3';
 import logo from "../assets/logo.png"
+import axios from 'axios';
 import "./Header.css"
 
 export default function Header() {
   const [searchItem, setSearchItem] = useState("")
+
   const handleChange = event => {
     setSearchItem(event.target.value)
   }
+
   const [web3, setWeb3] = useState();
   useEffect(()=>{
     if(typeof window.ethereum !== "undefined"){
@@ -21,17 +24,37 @@ export default function Header() {
       }
     }
   },[])
+
   const [account, setAccount] = useState("");
   const [isConnected, setIsConnected] = useState(false)
+
   const connectWallet = async() => {
     const accounts=await window.ethereum.request({
       method: "eth_requestAccounts",
     })
-    if(isConnected) setAccount("")
-    else setAccount(accounts[0])
-    setIsConnected(true)
+    if(isConnected)setAccount("")
+    else {
+      setAccount(accounts[0])
+      setIsConnected(true)
+    }
 
   }
+
+  const check_userinfo = async (address) => {
+    try{
+      const userinfo = await axios.get(`http://local:8080/userinfo/${address}`)
+      console.log(userinfo.data)
+      if(!userinfo.data){
+        const createUser = await axios.post(`http://localhost:8080/userinfo/createuser`, {wallet_address: address})
+        if(!createUser.data){
+          console.error("Error: POST request 양식이 올바르지 않습니다.")
+        }
+      }
+    }catch(err){
+      console.log(err)
+    }
+  }
+
 
   // account 값을 전달한 것이 아니라, useParams를 이용한 것이 문제될 것은 없는지 고려하기
   const mypageUrl = `/mypage/${account}`;
@@ -50,7 +73,7 @@ export default function Header() {
       : <button id="menu__mypage" onClick={needConnectionAlert}>MyPage</button>}
       </div>
       </div>
-      <button id="wallet" onClick={()=>{connectWallet()}}> {isConnected ? account :"Connect Metamask"} </button>
+      <button id="wallet" onClick={connectWallet}> {isConnected ? account :"Connect Metamask"} </button>
     </div>
   ) 
 

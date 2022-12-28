@@ -4,10 +4,9 @@ const prisma = new PrismaClient();
 
 const createUser = async (data) => {
   try {
-    const { username, wallet_address } = data;
+    const { wallet_address } = data;
     const createRes = await prisma.userInfo.create({
       data: {
-        username,
         wallet_address,
       },
     });

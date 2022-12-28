@@ -1,5 +1,5 @@
 const express = require('express');
-const { readUserByAddress } = require('../prismaScripts/userinfo');
+const { readUserByAddress, createUser } = require('../prismaScripts/userinfo');
 
 module.exports = {
 
@@ -13,5 +13,18 @@ module.exports = {
     }catch(err){
       console.log(err)
     };
+  },
+
+  createUser: async (req, res) => {
+    try{
+      const body = req.body;
+      console.log(body);
+      const createRes = await createUser(body);
+      console.log(createRes)
+      return res.status(200).send(createRes)
+    }catch(err){
+      console.log(err)
+    }
   }
+
 }
