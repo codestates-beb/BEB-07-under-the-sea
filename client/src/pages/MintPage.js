@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage } from "@fortawesome/free-regular-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons"
@@ -6,17 +6,18 @@ import "./MintPage.css";
 import { tokenContract } from "../erc721Abi"
 
 function MintPage({ account }) {
+  const [inputUrl, setinputUrl] = useState('');
+  const inputText = useRef();
   const [imageSrc, setImageSrc] = useState('');
+  const imgRef = useRef();
 
-  const encodeFileToBase64 = (fileBlob) => {
+  const saveImgFile = () => {
+    const file = imgRef.current.files[0];
     const reader = new FileReader();
-    reader.readAsDataURL(fileBlob);
-    return new Promise((resolve) => {
-      reader.onload = () => {
-        setImageSrc(reader.result);
-        resolve();
-      };
-    });
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setImageSrc(reader.result);
+    };
   };
 
   const [choice, setChoice] = useState("Ethereum");
@@ -33,7 +34,7 @@ function MintPage({ account }) {
     try {
       if (!account) return
       const response = await tokenContract.methods
-        .mintNFT(account, "https://images.unsplash.com/photo-1672129542132-ad329d983d93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60") // URI 하드코딩이 아닌 업로드 이미지 링크가 되도록 수정 필요
+        .mintNFT(account, inputUrl)
         .send({ from: account })
       console.log(response)
     } catch (err) {
@@ -59,10 +60,11 @@ function MintPage({ account }) {
         </div>
 
         <label role="button" className="attach-box" shape="squre" >
-          <input type="file" className="media" onChange={(e) => {
-            encodeFileToBase64(e.target.files[0]);
-          }} />
-          <div className="preview">{imageSrc && <img className="preview-img" src={imageSrc} alt="preview-img" />}</div>
+          <input type="file" accept="image/*"
+            className="media" onChange={saveImgFile} ref={imgRef}
+          />
+          <div className="preview">
+            {imageSrc && <img className="preview-img" src={imageSrc} alt="preview-img" />}</div>
           <FontAwesomeIcon icon={faImage} size="4x" />
         </label>
 
@@ -79,11 +81,13 @@ function MintPage({ account }) {
 
         <div className="input-area">
           <label className="label">External link</label><br></br>
-          <span className="label-detail" >OpenSea will include a link to this URL on this item's detail page, so that users can click to learn more about it. You are welcome to link to your own webpage with more details.</span>
+          <span className="label-detail" >Under the sea will include a link to this URL on this item's detail page, so that users can click to learn more about it. You are welcome to link to your own webpage with more details.</span>
         </div>
 
         <div>
-          <input className="Input-text" type="text" autoCapitalize="off" autoComplete="off" autoCorrect="off" placeholder="https://yoursite.io/item/123" required="" />
+          <input className="Input-text" type="text" autoCapitalize="off" autoComplete="off" autoCorrect="off" placeholder="https://yoursite.io/item/123" required="" onChange={(e) => {
+            setinputUrl(e.target.value)
+          }} ref={inputText} />
         </div>
 
 
