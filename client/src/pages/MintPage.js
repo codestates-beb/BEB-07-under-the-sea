@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage } from "@fortawesome/free-regular-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons"
@@ -6,6 +7,19 @@ import "./MintPage.css";
 import { tokenContract } from "../erc721Abi"
 
 function MintPage({ account }) {
+
+  const onSubmit = async (data) => {
+    await new Promise((r) => setTimeout(r, 1000));
+    alert(JSON.stringify(data));
+  }
+
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting, errors }
+  } = useForm();
+
+
   const [inputUrl, setinputUrl] = useState('');
   const inputText = useRef();
   const [imageSrc, setImageSrc] = useState('');
@@ -32,7 +46,7 @@ function MintPage({ account }) {
 
   const onClickMint = async () => {
     try {
-      if (!account) return
+      if (!account || !inputUrl) return
       const response = await tokenContract.methods
         .mintNFT(account, inputUrl)
         .send({ from: account })
@@ -46,7 +60,7 @@ function MintPage({ account }) {
     <header>
       <h1 className="title"> Create New Item </h1>
     </header>
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <p className="label-detail">
         <span className="required-label">*</span>
         "Required fields"
@@ -76,18 +90,29 @@ function MintPage({ account }) {
           <span className="required-label">*</span>
         </div>
         <div>
-          <input className="Input-text" type="text" autoCapitalize="off" autoComplete="off" autoCorrect="off" placeholder="Item name" required="" />
+          <input className="Input-text" type="text" autoCapitalize="off" autoComplete="off" autoCorrect="off" placeholder="Item name"
+            {...register("name", {
+              required: "필수 입력 칸입니다."
+            })} />
+          {errors.name && <small className="alert" role="alert">{errors.name.message}</small>}
         </div>
 
         <div className="input-area">
-          <label className="label">External link</label><br></br>
+          <label htmlFor="External link" className="label">External link</label>
+          <span className="required-label">*</span><br></br>
           <span className="label-detail" >Under the sea will include a link to this URL on this item's detail page, so that users can click to learn more about it. You are welcome to link to your own webpage with more details.</span>
         </div>
 
         <div>
-          <input className="Input-text" type="text" autoCapitalize="off" autoComplete="off" autoCorrect="off" placeholder="https://yoursite.io/item/123" required="" onChange={(e) => {
-            setinputUrl(e.target.value)
-          }} ref={inputText} />
+          <input className="Input-text" type="text" autoCapitalize="off" autoComplete="off" autoCorrect="off" placeholder="https://yoursite.io/item/123"
+            {...register("ExternalLink", {
+              required: "필수 입력 칸입니다."
+            })}
+            onChange={(e) => {
+              setinputUrl(e.target.value)
+            }} ref={inputText} />
+          {errors.ExternalLink && <small className="alert" role="alert">{errors.ExternalLink.message}</small>}
+
         </div>
 
 
@@ -119,7 +144,7 @@ function MintPage({ account }) {
 
         <div className="input-area">
           <span>
-            <button type="button" className="Submit" onClick={onClickMint}> Create </button>
+            <button type="submit" className="Submit" onClick={onClickMint} disabled={isSubmitting}> Create </button>
           </span>
         </div>
 

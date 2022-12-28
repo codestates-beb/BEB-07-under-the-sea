@@ -170,3 +170,7 @@
     cursor: pointer;
 
 }
+
+.alert {
+    color: red;
+}
