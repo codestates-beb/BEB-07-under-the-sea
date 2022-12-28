@@ -33,11 +33,11 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<MainPage />} />
-        <Route path='/mypage/:account' element={<MyPage />} />
+        <Route path='/mypage/:account' element={<MyPage account={account} />} />
         <Route path='/mintpage' element={<MintPage account={account} />} />
         <Route path='/marketplace' element={<MarketPlacePage />} />
         <Route path='/details' element={<DetailsPage />}>
-          <Route path=':id'/>
+          <Route path=':id' />
         </Route>
       </Routes>
       <Footer />
