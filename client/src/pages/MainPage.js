@@ -18,7 +18,7 @@ export default function MainPage() {
           </div>
         </div>
         <div id="row2">
-          {data.map((e)=> (
+          {data.reverse().map((e)=> (
             <Item imgUrl={e.imgUrl} name={e.name} collection={e.collection} price={e.price} id={e.id}/>
           ))}
         </div> 

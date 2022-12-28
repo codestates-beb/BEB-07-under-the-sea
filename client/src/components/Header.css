@@ -54,8 +54,8 @@
 }
 
 #search{
-    width:600px;
-    height: 40px;
+    width:400px;
+    height: 30px;
     margin:50px;
     border-width: 2px;
     border-radius: 10px;
@@ -63,7 +63,7 @@
 
 #wallet{
     margin:50px;
-    margin-top:58px;
+    margin-top:54px;
     background-color: lightblue;
     border: none;
     height:30px;
