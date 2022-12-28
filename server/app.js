@@ -1,4 +1,3 @@
-const { createUser, readUserByAddress } = require('./prismaScripts/userinfo');
 const express = require('express');
 const cors = require('cors');
 const app = express();
