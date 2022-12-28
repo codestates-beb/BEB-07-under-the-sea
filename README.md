@@ -11,7 +11,7 @@
  
  <tr>
   <td align='center'>김현태</td>
-  <td align='center'>Front-end, DB, Back-end</td>
+  <td align='center'>DB, Back-end</td>
   <td align='center'><a href="https://github.com/hyuntae384">hyuntae384</a></td>
   <td align='center'>hyuntae384@gmail.com</td>
  </tr>   
