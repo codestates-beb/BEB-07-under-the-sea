@@ -5,6 +5,7 @@
     place-items: center;
     padding-top: 150px;
     padding-bottom: 150px;
+    background-image: linear-gradient(to top, lightblue 0%, white 100%);
 }
 #row{
     display: grid;

@@ -46,11 +46,12 @@
 #NFTname{
     font-size: 20px;
     color: black;
+    font-weight: bold;
     
 }
 #NFTcollection{
     font-size: 15px;
-    color:gray;
+    color: lightblue;
 }
 
 #NFTprice{

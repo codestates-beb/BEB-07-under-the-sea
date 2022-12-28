@@ -143,17 +143,19 @@
   width: 100px;
   height: 40px;
   text-decoration: none;
-  background-color: white;
+  background-color: lightblue;
   border: none;
+  border-radius: 20px;
   font-family: sans-serif;
   font-size: 15px;
   font-weight: bold;
-  color: rgb(3, 30, 87);
+  color:black;
   transition-property: color;
 }
 
 .my-createdNFT-clicked:hover {
-  background-color: pink;
+  background-color: darkblue;
+  color:white;
   cursor: pointer;
 }
 
