@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage } from "@fortawesome/free-regular-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons"
 import "./MintPage.css";
+import { tokenContract } from "../erc721Abi"
 
-function MintingPage() {
+function MintPage({ account }) {
   const [imageSrc, setImageSrc] = useState('');
 
   const encodeFileToBase64 = (fileBlob) => {
@@ -27,6 +28,18 @@ function MintingPage() {
   const handleNetwork = (event) => {
     setChoice(event.target.value)
   };
+
+  const onClickMint = async () => {
+    try {
+      if (!account) return
+      const response = await tokenContract.methods
+        .mintNFT(account, "https://images.unsplash.com/photo-1672129542132-ad329d983d93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyN3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60") // URI 하드코딩이 아닌 업로드 이미지 링크가 되도록 수정 필요
+        .send({ from: account })
+      console.log(response)
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   return <div className="mint-container">
     <header>
@@ -61,7 +74,7 @@ function MintingPage() {
           <span className="required-label">*</span>
         </div>
         <div>
-          <input className="Input-text" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Item name" required="" />
+          <input className="Input-text" type="text" autoCapitalize="off" autoComplete="off" autoCorrect="off" placeholder="Item name" required="" />
         </div>
 
         <div className="input-area">
@@ -70,7 +83,7 @@ function MintingPage() {
         </div>
 
         <div>
-          <input className="Input-text" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="https://yoursite.io/item/123" required="" />
+          <input className="Input-text" type="text" autoCapitalize="off" autoComplete="off" autoCorrect="off" placeholder="https://yoursite.io/item/123" required="" />
         </div>
 
 
@@ -80,7 +93,7 @@ function MintingPage() {
         </div>
 
         <div>
-          <input className="Input-text-large" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Provide a detailed description of your item" required="" />
+          <input className="Input-text-large" type="text" autoCapitalize="off" autoComplete="off" autoCorrect="off" placeholder="Provide a detailed description of your item" required="" />
         </div>
 
         <div className="input-area">
@@ -89,7 +102,7 @@ function MintingPage() {
         </div>
 
         <div>
-          <input className="Input-text" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="1" required="" />
+          <input className="Input-text" type="text" autoCapitalize="off" autoComplete="off" autoCorrect="off" placeholder="1" required="" />
         </div>
 
         <div className="input-area">
@@ -97,12 +110,12 @@ function MintingPage() {
         </div>
 
         <div>
-          <select onChange={handleNetwork} className="Input-text" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="1" required=""> {options}</select>
+          <select onChange={handleNetwork} className="Input-text" type="text" autoCapitalize="off" autoComplete="off" autoCorrect="off" placeholder="1" required=""> {options}</select>
         </div>
 
         <div className="input-area">
           <span>
-            <button type="button" className="Submit"> Create </button>
+            <button type="button" className="Submit" onClick={onClickMint}> Create </button>
           </span>
         </div>
 
@@ -112,4 +125,4 @@ function MintingPage() {
   </div>
 }
 
-export default MintingPage;
+export default MintPage;
