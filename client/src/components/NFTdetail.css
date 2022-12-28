@@ -1,0 +1,31 @@
+#detailContainer{
+    margin-top:-500px;
+    display: flex;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    padding:20px;
+    border-radius: 23px;
+    width: 90vw;
+}
+
+#detailContents{
+    margin-left: 20px;
+}
+#detailThumbnail{
+    width: 500px;
+    border-radius: 25px;
+}
+#detailName{
+    font-size: 40px;
+}
+#detailCollection{
+    font-size:25px;
+    color:lightblue;
+}
+#detailPrice{
+    font-weight: bold;
+}
+
+#detailDescription{
+    font-size: 20px;
+}

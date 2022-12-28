@@ -5,13 +5,16 @@ import NFTdetail from "../components/NFTdetail"
 import data from "../resources/dummyNFT";
 
 const DetailsPage = ()=>{
-    let {id} = useParams();
-    const filteredNFT = data.filter((e)=>e.id===id)
+    let id = Number(useParams().id);
+    console.log(data)
+    let filteredNFT = data.filter((e) => e.id===id)
+    console.log(filteredNFT.id)
     return(
-        
         <div id="detailsContainer">
-            <h1>hi</h1>
-            <NFTdetail imgUrl={filteredNFT.imgUrl} name={filteredNFT.name} collection={filteredNFT.collection} price={filteredNFT.price} id={filteredNFT.id} description={filteredNFT.description}/>
+            {filteredNFT.map((el)=>{
+                return <NFTdetail imgUrl={el.imgUrl} name={el.name} collection={el.collection} price={el.price} id={el.id} description={el.description}/>
+            })}
+            
         </div>
     )
 }
