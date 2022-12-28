@@ -1,8 +1,8 @@
-.detailsContainer{
+#detailsContainer{
+    width: 100%;
     min-height: 100vh;
+    display: grid;
+    place-items: center;
     padding-top: 150px;
     padding-bottom: 150px;
-    max-width: 100%;
-    margin: 0px auto;
-    box-sizing: border-box;
 }
