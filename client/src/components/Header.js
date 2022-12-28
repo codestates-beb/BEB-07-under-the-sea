@@ -67,7 +67,7 @@ export default function Header() {
       <Link to="/"><img src={logo} alt="logo" id="logo"></img></Link>
       <div id="menuItems">
         <div><input id="search" type="text" placeholder="search" value={searchItem} onChange={handleChange}></input>
-      <Link to="/mintpage" id="menu">Create</Link>
+      {isConnected ? <Link to="/mintpage" id="menu">Create</Link> : <button id="menu__mypage" onClick={needConnectionAlert}>Create</button>}
       <Link to="/marketplace" id="menu">Marketplace</Link>
       {isConnected ? <Link to={mypageUrl} id="menu">MyPage</Link> 
       : <button id="menu__mypage" onClick={needConnectionAlert}>MyPage</button>}

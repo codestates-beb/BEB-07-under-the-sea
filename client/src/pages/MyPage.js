@@ -2,7 +2,7 @@ import React from "react";
 import Collected from "../components/collected";
 import Created from "../components/created";
 import { useState } from "react";
-import hanbando from "../assets/hanbando.jpeg"
+import profile from "../assets/3.png"
 import spurs from "../assets/spurs.jpeg"
 import ethereum1 from "../assets/ethereum1.png"
 import "./MyPage.css"
@@ -81,12 +81,12 @@ function MyPage({ account }) {
         <div className="myInfo__profile">
           <input type="file" className="profile__upload" />
           {/* 프로필 사진 */}
-          <img className="myInfo__profile--img" src={hanbando} alt="한반두" />
+          <img className="myInfo__profile--img" src={profile} alt="한반두" />
         </div>
 
         <div className="myInfo__detail">
           <div className="myInfo__detail--username">
-            Unnamed{/*사용자 이름*/}
+            Anonymous{/*사용자 이름*/}
           </div>
           <div className="myInfo__detail--account">
             <img className="ethereum1" src={ethereum1} alt="이더리움1" width="25" height="25" />

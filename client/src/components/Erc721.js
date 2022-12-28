@@ -3,7 +3,7 @@ import "./Erc721.css"
 function Erc721({ erc721list }) {
     return (
         <div className="erc721list">
-            {erc721list.map((token) => {
+            {erc721list.slice(0).reverse().map((token) => {
                 return (
                     <div className="erc721token">
 

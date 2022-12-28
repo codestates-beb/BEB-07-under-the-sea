@@ -8,7 +8,6 @@
     height: 130px;
     color: black;
     background-color: white;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 #menuItems{
     left: 40%;
@@ -16,8 +15,8 @@
 #logo{
     width: 50px;
     position:relative;
-    top:30px;
-    left:40px;
+    top:40px;
+    left:50px;
     margin-right: 100px;
 }
 #menu{
@@ -55,8 +54,8 @@
 }
 
 #search{
-    width:300px;
-    height: 20px;
+    width:400px;
+    height: 30px;
     margin:50px;
     border-width: 2px;
     border-radius: 10px;
@@ -64,6 +63,7 @@
 
 #wallet{
     margin:50px;
+    margin-top:54px;
     background-color: lightblue;
     border: none;
     height:30px;
