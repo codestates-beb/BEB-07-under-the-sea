@@ -1,9 +1,16 @@
 import React from "react"
+import {useParams} from "react-router-dom"
 import "./DetailsPage.css"
-export default function DetailsPage(){
+import Item from "../components/NFTitem"
+import data from "../resources/dummyNFT";
+
+const DetailsPage = (props)=>{
+    let {id} = useParams();
+
     return(
-        <div className="detailsContainer">
-            <h1>details</h1>
-        </div>
+        <div>{props.id}</div>
     )
 }
+
+
+export default DetailsPage

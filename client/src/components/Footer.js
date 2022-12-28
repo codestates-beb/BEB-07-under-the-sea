@@ -4,13 +4,10 @@ import "./Footer.css"
 export default function Footer() {
   return(
     <div className="Footer">
-      <div className="row">
+      <div id="row">
         <div className="col" id="col1">
-          <img src="./logo.png" alt="logo" id="logo"></img>
-          <br></br>
-          <h3>Under the Sea</h3><br></br>
+          <h3>Under the Sea</h3>
           <p id="description">The world’s first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs). Buy, sell, and discover exclusive digital items.</p>
-          <br></br>
         </div>
         <div className="col" id="col2">
           <h5>박정연</h5>

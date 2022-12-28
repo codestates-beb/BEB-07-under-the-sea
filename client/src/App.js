@@ -36,7 +36,7 @@ function App() {
         <Route path='/mypage/:account' element={<MyPage />} />
         <Route path='/mintpage' element={<MintPage account={account} />} />
         <Route path='/marketplace' element={<MarketPlacePage />} />
-        <Route path='/details' element={<DetailsPage />} />
+        <Route exact path='/details:id' component={<DetailsPage />}/>
       </Routes>
       <Footer />
     </BrowserRouter>

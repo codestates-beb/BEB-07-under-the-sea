@@ -3,10 +3,13 @@
     background-color: lightblue;
     color: black;
 }
-.row{
-    display: grid;
-    column-gap: 100px;
+#row{
+    padding-bottom: 50px;
+    display: flex;
+    column-gap: 300px;
     grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    align-items: center;
 }
 .col{
     grid-column: auto;

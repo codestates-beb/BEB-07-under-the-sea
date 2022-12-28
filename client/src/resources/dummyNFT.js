@@ -11,60 +11,70 @@ import monkey5 from "../assets/collectedImg/10.png"
 
 const collectedNFT = [
   {
+    id: 1,
     imgUrl: rabbit1,
     name: "The Rabbit Saga #1",
     collection: "The Rabbit Saga",
     price: "0.100 ETH"
   },
   {
+    id:2,
     imgUrl: rabbit2,
     name: "The Rabbit Saga #2",
     collection: "The Rabbit Saga",
     price: "0.300 ETH"
   },
   {
+    id:3,
     imgUrl: rabbit3,
     name: "The Rabbit Saga #3",
     collection: "The Rabbit Saga",
     price: "1.000 ETH"
   },
   {
+    id:4,
     imgUrl: rabbit4,
     name: "The Rabbit Saga #4",
     collection: "The Rabbit Saga",
     price: "0.100 ETH"
   },
   {
+    id:5,
     imgUrl: rabbit5,
     name: "The Rabbit Saga #5",
     collection: "The Rabbit Saga",
     price: "0.700 ETH"
   },
   {
+    id:6,
     imgUrl: monkey1,
     name: "001",
     collection: "Bored Ape Yacht Club",
     price: "1.000 ETH"
   },
   {
+    id:7,
     imgUrl: monkey2,
     name: "002",
     collection: "Bored Ape Yacht Club",
     price: "1.350 ETH"
   },
   {
+    id:8,
     imgUrl: monkey3,
     name: "003",
     collection: "Bored Ape Yacht Club",
     price: "0.155 ETH"
   },
   {
+    id:9,
     imgUrl: monkey4,
     name: "004",
     collection: "Bored Ape Yacht Club",
     price: "0.111 ETH"
   },
   {
+    id:10,
     imgUrl: monkey5,
     name: "005",
     collection: "Bored Ape Yacht Club",
