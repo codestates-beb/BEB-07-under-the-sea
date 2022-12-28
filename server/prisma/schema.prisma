@@ -9,3 +9,23 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model UserInfo {
+  id Int @id @default(autoincrement())
+  username String @default("Unnamed")
+  wallet_address String @unique
+  backgound_img String @default("")
+  profile_img String @default("")
+}
+
+model NFTs {
+  token_id String @unique
+  contract_address String
+  owner String 
+  token_name String
+  description String
+  image_link String
+  price Int
+  token_symbol String
+  // UserInfo UserInfo @relation(fields: [owner], references: [wallet_address])
+}
