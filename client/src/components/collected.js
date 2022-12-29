@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import "./collected.css";
 import json from "../resources/dummyNFT";
-
 function Collected() {
 
   const [searchNFT, setSearchNFT] = useState("")
@@ -35,16 +34,14 @@ function Collected() {
       </div>
       <div className="collected__NFT--list">
         {/* 필터링 결과 적용하여 아무 item 이 없을 경우 noitem이 나오도록 설정 */}
-        {filteredNFT.map((el) => {
+        {json.map((el) => {
           return (
-            <div className="collected__NFT--item">
-              <div className="collected__NFT--itemImg">
-                <img className="collected__NFT--thumbnail" src={el.imgUrl}/>
+              <div id="itemContainer">
+                  <img src={el.imgUrl} id="thumbnail" alt="item img"></img>
+                  <h4 id="NFTcollection">{el.collection}</h4>
+                  <h4 id="NFTname">{el.name}</h4>
+                  <p id="NFTprice">{el.price}</p>
               </div>
-              <div id="name">{el.name}</div>
-              <div id="collection">{el.collection}</div>
-              <div id="price">{el.price}</div>
-            </div>
           )
         })}
         

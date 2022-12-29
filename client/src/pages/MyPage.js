@@ -123,7 +123,8 @@ function MyPage({ account }, props) {
           <button className="button__favorited" value='favorited' onClick={handleClick}>Favorited</button>
           <button className="button__activity" value='activity' onClick={handleClick}>Activity</button>
         </div>
-        {buttonResult()}
+        <div id="row2">{buttonResult()}</div>
+        
       </div>
     </section>
   )

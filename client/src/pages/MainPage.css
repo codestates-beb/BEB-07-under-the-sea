@@ -19,7 +19,7 @@
     grid-template-columns: repeat(auto-fill, minmax(20%, auto));
     gap: 20px;
     margin-left: 100px;
-    
+   
 }
 .intro{
     display: grid;
