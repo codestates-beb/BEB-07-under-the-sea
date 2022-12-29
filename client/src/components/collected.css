@@ -42,7 +42,7 @@
   width: 100%;
   flex-wrap: wrap;
   display: flex;
-  min-height: 100vh;
+  min-height: 500px;
   margin-bottom: 280px;
 }
 
@@ -52,6 +52,7 @@
   padding:20px;
   border-radius: 23px;
   max-width: 250px;
+  max-height: 350px;
   margin: 20px;
   position: relative;
 }
