@@ -19,7 +19,7 @@ function App() {
           method: "eth_requestAccounts",
         });
         setAccount(account[0]);
-        console.log(account)
+        //console.log(account)
         check_userinfo(account);
       }
     } catch (err) {
@@ -29,10 +29,11 @@ function App() {
 
   const check_userinfo = async (address) => {
     try{
-      const userinfo = await axios.get(`http://local:8080/userinfo/${address}`)
+      const userinfo = await axios.get(`http://localhost:8080/userinfo/${address}`)
       console.log(userinfo.data)
       if(!userinfo.data){
         const createUser = await axios.post(`http://localhost:8080/userinfo/createuser`, {wallet_address: address})
+        console.log(createUser)
         if(!createUser.data){
           console.error("Error: POST request 양식이 올바르지 않습니다.")
         }

@@ -36,7 +36,7 @@ export default function Header(props) {
     else {
       setAccount(accounts[0])
       setIsConnected(true)
-      props.check_userinfo(account)
+      //props.check_userinfo(account)
     }
 
   }
