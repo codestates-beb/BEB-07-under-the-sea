@@ -3,7 +3,7 @@ import "./MainPage.css";
 import { Link } from "react-router-dom";
 import { tokenContract } from "../erc721Abi";
 import Item from "../components/NFTitem";
-
+import Snowfall from 'react-snowfall'
 
 export default function MainPage() {
   const [erc721list, setErc721list] = useState([]);
@@ -50,6 +50,7 @@ export default function MainPage() {
 
   return (
     <div className="mainpage">
+      <Snowfall/>
       <div id="row">
         <div className="intro">
           <h1>Explore, collect, and sell NFTs</h1>
