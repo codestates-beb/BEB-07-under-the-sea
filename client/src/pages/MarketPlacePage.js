@@ -1,54 +1,91 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import "./MarketPlacePage.css";
-import Nfts from "../components/Nfts";
+import Categories from "../components/Categories";
+import Item from "../components/NFTitem";
+import { tokenContract } from "../erc721Abi";
+import Paging from "../components/Paging";
 
-// NFT가 표시될 컴포넌트 필요.
-// 페이지네이션 구현 필요.
-// nft 컴포넌트 클릭시 상세페이지로 들어갈 수 있게 만들어야 함.
-// https://velog.io/@rlaekgks111/Project-Opensea-NFT-%EA%B1%B0%EB%9E%98%EC%86%8C-Clone-Coding#explore-%ED%8E%98%EC%9D%B4%EC%A7%80
 
 function MarketPlacePage() {
 
-  const [category,setCategory] = useState('all')
-  const [posts, setPosts] = useState([]);
+  const [erc721list, setErc721list] = useState([]);
+  const [items, setItems] = React.useState([]) //리스트에 나타낼 아이템
+  const [count, setCount] = React.useState(0); //아이템 총 개수
+  const [currentpage, setCurrentpage] = React.useState(1); //현재페이지
+  const [postPerPage] = React.useState(8); //페이지당 아이템 개수
 
-  const handleClick = (event) => {
-    return setCategory(event.target.value);
+  const [indexOfLastPost, setIndexOfLastPost] = React.useState(0);
+  const [indexOfFirstPost, setIndexOfFirstPost] = React.useState(0);
+  const [currentPosts, setCurrentPosts] = React.useState(0);
+
+  React.useEffect(() => {
+    setCount(tokenContract.methods.totalSupply().call());
+    setIndexOfLastPost(currentpage * postPerPage);
+    setIndexOfFirstPost(indexOfLastPost - postPerPage);
+    setCurrentPosts(items.slice(indexOfFirstPost, indexOfLastPost));
+  }, [currentpage, indexOfFirstPost, indexOfLastPost, items, postPerPage]);
+
+  const setPage = (e) => {
+    setCurrentpage(e);
+  };
+
+  const getErc721Token = async () => {
+
+    const name = await tokenContract.methods.name().call();
+    const symbol = await tokenContract.methods.symbol().call();
+    const totalSupply = await tokenContract.methods.totalSupply().call();
+
+    let arr = [];
+    for (let i = 1; i <= totalSupply; i++) {
+      arr.push(i);
+    }
+    for (let tokenId of arr) {
+      let tokenOwner = await tokenContract.methods
+        .ownerOf(tokenId)
+        .call();
+      if (String(tokenOwner).toLowerCase()) {
+        let tokenURI = await tokenContract.methods
+          .tokenURI(tokenId)
+          .call();
+        setErc721list((prevState) => {
+          return [...prevState, { name, symbol, tokenId, tokenURI }];
+        });
+      }
+    }
   }
 
+  const useDidMountEffect = (func, deps) => {
+    const didMount = useRef(false);
+
+    useEffect(() => {
+      if (didMount.current) func();
+      else didMount.current = true;
+    }, deps);
+  };
+
+  useDidMountEffect(() => {
+    getErc721Token();
+  }, []);
+
+  const handlePageChange = (page) => {
+    setPage(page);
+  };
 
   return (
+    
     <div id="marketplace">
       <div classMame="title">
         <h1>Explore collections</h1>
       </div>
-      <div className="myNFT__menu">
-        <button className="category_all" value='all' onClick={handleClick}>All</button>
-        <button className="category_etc1" value='etc1' onClick={handleClick}>Etc1</button>
-        <button className="category_etc2" value='etc2' onClick={handleClick}>Etc2</button>
-        <button className="category_etc3" value='etc3' onClick={handleClick}>Etc3</button>
-      </div>
       <div>
-        <Nfts />
-      </div>
-      <header>
-        <h1>게시물 목록</h1>
-      </header>
-
-      {/*<main>
-        {posts.map(({ id, title, body }) => (
-          <article key={id}>
-            <h3>
-              {id}. {title}
-            </h3>
-            <p>{body}</p>
-          </article>
+        <Categories />
+        <div id="row2">
+        {erc721list.slice(0).reverse().map((item) => (
+          <Item tokenURI={item.tokenURI} name={item.name} collection={item.collection} price={item.price} tokenId={item.tokenId} />
         ))}
-      </main>
-      후에 사용 고려
-      컨트랙트로 json 객체 받고 뿌리는거 생각
-      
-        */}
+      </div>
+        <Paging page={currentpage} count={count} setPage={setPage}/>
+      </div>
     </div>
   );
 }

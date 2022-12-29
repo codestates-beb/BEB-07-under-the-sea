@@ -1,0 +1,41 @@
+.fqa-parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .faq-list {
+    width: 80%;
+  }
+  
+  .faq-card {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    border: 1px solid black;
+    border-radius: 20px;
+    flex-direction: column;
+  }
+  
+  .faq-card-title {
+    display: flex;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .faq-card-answer {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    padding-right: 2rem;
+    border: 0px solid rgba(225,228,230,.5);
+    border-top-width: 1px;
+  }
+  
+  .faq-card-none {
+    display: none;
+  }
