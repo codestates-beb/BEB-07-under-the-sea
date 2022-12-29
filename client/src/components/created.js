@@ -63,7 +63,6 @@ function Created({ account }) {
 
   return(
     <section className="created__NFT">
-      <div className="created__menuline"></div>
       <div className="created__NFT--search">
         <input className="created__NFT--searchbox" 
         type="text" 

@@ -1,11 +1,4 @@
-.created__menuline{
-  border-style: solid;
-  border-color: rgb(3, 30, 87);
-  position: relative;
-  left: 108px;
-  top: -6px;
-  width: 80px;
-}
+
 
 .created__NFT--searchbox{
   position: relative;
@@ -34,6 +27,7 @@
 
 .created__NFT--search__button:hover{
   color: rgb(3, 30, 87);
+  cursor:pointer;
 }
 
 .created__NFT--list{

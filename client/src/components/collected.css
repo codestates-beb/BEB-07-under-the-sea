@@ -1,12 +1,3 @@
-.collected__menuline{
-  border-style: solid;
-  border-color: rgb(3, 30, 87);
-  position: relative;
-  left: 9px;
-  top: -3px;
-  width: 80px;
-}
-
 .collected__NFT--searchbox{
   position: relative;
   top: 30px;
@@ -44,6 +35,7 @@
   display: flex;
   min-height: 500px;
   margin-bottom: 280px;
+
 }
 
 .collected__NFT--item{
@@ -87,4 +79,66 @@
   left: 32vw;
   font-size: 30px;
   color: rgb(3, 30, 87);
+}
+
+#itemContainer{
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  padding:20px;
+  border-radius: 23px;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0); 
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  margin: 20px;
+}
+#NFTlink{
+  text-decoration: none;
+}
+#itemContainer:hover{
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+#thumbnail{
+  object-fit: cover;
+  width:200px;
+  height:200px;
+  border-radius: 20px;
+}
+
+@keyframes bounce {
+0%, 100%, 20%, 50%, 80% {
+  -webkit-transform: translateY(0);
+  -ms-transform:     translateY(0);
+  transform:         translateY(0)
+}
+40% {
+  -webkit-transform: translateY(-30px);
+  -ms-transform:     translateY(-30px);
+  transform:         translateY(-30px)
+}
+60% {
+  -webkit-transform: translateY(-15px);
+  -ms-transform:     translateY(-15px);
+  transform:         translateY(-15px)
+}
+}
+
+#NFTname{
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  
+}
+#NFTcollection{
+  font-size: 15px;
+  color: lightblue;
+}
+
+#NFTprice{
+  font-size:15px;
+  color:black;
 }

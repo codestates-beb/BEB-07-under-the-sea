@@ -105,8 +105,8 @@
   left: 50px;
   top: 170px;
   bottom: 300px;
+  
 }
-
 .myNFT__menu {
   width: 85vw;
   border-bottom-style: solid;
@@ -134,7 +134,7 @@
   width: 100px;
   height: 40px;
   text-decoration: none;
-  background-color: white;
+  background-color: lightblue;
   border: none;
   font-family: sans-serif;
   font-size: 15px;
