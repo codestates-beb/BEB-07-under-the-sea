@@ -1,5 +1,5 @@
-import "./Erc721.css"
-import { useState } from "react";
+import "./Erc721.css";
+import React, { useState } from "react";
 import { tokenContract } from "../erc721Abi";
 
 function Erc721({ account, erc721list }) {
@@ -18,6 +18,7 @@ function Erc721({ account, erc721list }) {
             console.error(err);
         }
     };
+
     return (
         <div className="erc721list">
             {erc721list.slice(0).reverse().map((token) => {
@@ -25,17 +26,19 @@ function Erc721({ account, erc721list }) {
                     <div className="erc721token">
 
                         <span className="name">
-                            {token.name}</span>
+                            NFT collection</span>
                         {/* (<span className="symbol">{token.symbol}</span>) */}
 
-                        <div className="nft">id: {token.tokenId}</div>
+                        <div className="nft">NFT Name: #{token.tokenId}</div>
                         <img className="created__NFT--thumbnail"
                             src={token.tokenURI} width={300} />
 
                         <div className="tokenTransfer">
                             To:{" "}
                             <input
+                                className="send-input"
                                 type="text"
+
                                 value={to}
                                 onChange={(e) => {
                                     setTo(e.target.value);
@@ -48,8 +51,7 @@ function Erc721({ account, erc721list }) {
                                     token.address,
                                     token.tokenId
                                 )}
-                            >
-                                send Token
+                            > send Token
                             </button>
                         </div>
                     </div>
