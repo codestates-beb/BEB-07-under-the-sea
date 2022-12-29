@@ -5,7 +5,7 @@ const http = require('http').createServer(app);
 
 const userinfoRouter = require('./router/userinfoRouter');
 
-app.use(cors());
+app.use(cors({ origin: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
