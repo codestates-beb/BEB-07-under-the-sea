@@ -58,7 +58,7 @@ export default function Header(props) {
       : <button id="menu__mypage" onClick={needConnectionAlert}>MyPage</button>}
       </div>
       </div>
-      <button id="wallet" onClick={connectWallet}> {isConnected ? account :"Connect Metamask"} </button>
+      <button id="wallet" onClick={connectWallet}> {isConnected ? account.slice(0,6)+"..." :"Connect Metamask"} </button>
     </div>
   ) 
 
