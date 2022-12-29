@@ -4,15 +4,13 @@ import Created from "../components/created";
 import profile from "../assets/3.png"
 import spurs from "../assets/spurs.jpeg"
 import ethereum1 from "../assets/ethereum1.png"
+import edit from "../assets/edit.png"
 import "./MyPage.css"
 import { useParams } from "react-router-dom";
-import { tokenContract } from "../erc721Abi";
-import TokenList from "../components/TokenList";
 import Popup from "../components/popup";
 import axios from "axios"
 
 function MyPage({ account }, props) {
-  const [erc721list, setErc721list] = useState([]);
   const [popup, handlePopup] = useState(false)
   const [username, setUsername] = useState("Unnamed"); // 서버에서 불러오면 필요 없음
 
@@ -47,66 +45,43 @@ function MyPage({ account }, props) {
     }
   }
 
+
   const handleUsername = async (name) => {
     await setUsername(name);
     // 서버와 연결해서 디비에도 저장
     await update_username(name);
   }
 
-  const getErc721Token = async () => {
-    const name = await tokenContract.methods.name().call();
-    const symbol = await tokenContract.methods.symbol().call();
-    const totalSupply = await tokenContract.methods.totalSupply().call();
 
-    let arr = [];
-    for (let i = 1; i <= totalSupply; i++) {
-      arr.push(i);
-    }
-    for (let tokenId of arr) {
-      let tokenOwner = await tokenContract.methods
-        .ownerOf(tokenId)
-        .call();
-      if (String(tokenOwner).toLowerCase() === account) {
-        let tokenURI = await tokenContract.methods
-          .tokenURI(tokenId)
-          .call();
-        setErc721list((prevState) => {
-          return [...prevState, { name, symbol, tokenId, tokenURI }];
-        });
-      }
-    }
+  const [myNFT, setMyNFT] = useState('collected')
 
+  const handleClick = (event) => {
+    return setMyNFT(event.target.value);
   }
-  // const [myNFT, setMyNFT] = useState('collected')
 
+  const buttonResult = () => {
+    if (myNFT === 'collected'){
+      return <Collected />
+    } else if (myNFT === 'created') {
+      return <Created account={account}/>
+    } else {
+      return (
+        <div className="comingsoon">
+          <div className="comingsoon__writing">Coming soon...</div>
+        </div>
+      )
+    }
+  }
 
-  // const handleClick = (event) => {
-  //   return setMyNFT(event.target.value);
-  // }
+  const ifCollectedClicked = () => {
+    if (myNFT === 'collected') return 'button__collected--clicked'
+    else { return 'button__collected' }
+  }
 
-  // const buttonResult = () => {
-  //   if (myNFT === 'collected') {
-  //     return <Collected />
-  //   } else if (myNFT === 'created') {
-  //     return <Created />
-  //   } else {
-  //     return (
-  //       <div className="comingsoon">
-  //         <div className="comingsoon__writing">Coming soon...</div>
-  //       </div>
-  //     )
-  //   }
-  // }
-
-  // const ifCollectedClicked = () => {
-  //   if (myNFT === 'collected') return 'button__collected--clicked'
-  //   else { return 'button__collected' }
-  // }
-
-  // const ifCreatedClicked = () => {
-  //   if (myNFT === 'created') return 'button__created--clicked'
-  //   else { return 'button__created' }
-  // }
+  const ifCreatedClicked = () => {
+    if (myNFT === 'created') return 'button__created--clicked'
+    else { return 'button__created' }
+  }
 
   return (
     <section className="myInfo">
@@ -127,13 +102,13 @@ function MyPage({ account }, props) {
         <div className="myInfo__detail">
           <div className="myInfo__detail--username">
             {username /*사용자 이름 수정예정!!*/  }
-            <button onClick={() => {handlePopup(true)}}>change username</button>
+            <img className="myInfo__detail--edit" src={edit} onClick={() => {handlePopup(true)}}/>
             {popup ? <Popup onClose={handlePopup} currentUsername={username} handleUsername={handleUsername} /> : ""}
           </div>
           <div className="myInfo__detail--account">
             <img className="ethereum1" src={ethereum1} alt="이더리움1" width="25" height="25" />
             <div className="myInfo__detail--account--address">
-              {account}
+              {`${account.slice(0,6)}...${account.slice(-4)}`}
             </div>
             <br></br>
             <div className="myInfo__detail--registereddate">{"Joined December 2022"/*가입날짜*/}</div>
@@ -141,7 +116,7 @@ function MyPage({ account }, props) {
         </div>
       </div>
 
-      {/* <div className="myNFT">
+      <div className="myNFT">
         <div className="myNFT__menu">
           <button className={ifCollectedClicked()} value='collected' onClick={handleClick}>Collected</button>
           <button className={ifCreatedClicked()} value='created' onClick={handleClick}>Created</button>
@@ -149,12 +124,6 @@ function MyPage({ account }, props) {
           <button className="button__activity" value='activity' onClick={handleClick}>Activity</button>
         </div>
         {buttonResult()}
-      </div> */}
-      <div className="myNFT">
-        <div className="myNFT__menu">
-          <button className="my-createdNFT-clicked" onClick={getErc721Token}>my created NFT</button>
-          <TokenList erc721list={erc721list} />
-        </div>
       </div>
     </section>
   )
