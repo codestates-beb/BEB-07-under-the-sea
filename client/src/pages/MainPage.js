@@ -33,6 +33,8 @@ export default function MainPage() {
     }
   }
 
+
+
   const useDidMountEffect = (func, deps) => {
     const didMount = useRef(false);
 
@@ -63,9 +65,6 @@ export default function MainPage() {
           <Item tokenURI={e.tokenURI} name={e.name} collection={e.collection} price={e.price} tokenId={e.tokenId} />
         ))}
       </div>
-      {/* <div>
-        <TokenList erc721list={erc721list} />
-      </div> */}
     </div>
   );
 }

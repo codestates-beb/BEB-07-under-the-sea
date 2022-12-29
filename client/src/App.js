@@ -8,6 +8,7 @@ import MarketPlacePage from './pages/MarketPlacePage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import DetailsPage from './pages/DetailsPage';
+import SendNFTPage from './pages/SendNFTPage';
 import axios from 'axios'
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
         <Route path='/details' element={<DetailsPage />}>
           <Route path=':id' />
         </Route>
+        <Route path='/sendnft' element={<SendNFTPage/>}/>
       </Routes>
       <Footer />
     </BrowserRouter>

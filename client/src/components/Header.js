@@ -54,6 +54,7 @@ export default function Header(props) {
         <div><input id="search" type="text" placeholder="Search items, collections, and accounts" value={searchItem} onChange={handleChange}></input>
       {isConnected ? <Link to="/mintpage" id="menu">Create</Link> : <button id="menu__mypage" onClick={needConnectionAlert}>Create</button>}
       <Link to="/marketplace" id="menu">Marketplace</Link>
+      <Link to="/sendnft" id="menu">Send NFT</Link>
       {isConnected ? <Link to={mypageUrl} id="menu">MyPage</Link> 
       : <button id="menu__mypage" onClick={needConnectionAlert}>MyPage</button>}
       </div>
