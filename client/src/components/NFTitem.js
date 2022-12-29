@@ -7,9 +7,9 @@ const NFTitem = (erc721list) => {
         <Link to={`/details/${erc721list.tokenId}`} id="NFTlink">
             <div id="itemContainer">
                 <img src={erc721list.tokenURI} id="thumbnail" alt="item img"></img>
-                <h4 id="NFTcollection">{erc721list.collection}</h4>
-                <h4 id="NFTname">{erc721list.name}</h4>
-                <p id="NFTid">{`id: `+ erc721list.tokenId}</p>
+                <h4 id="NFTcollection">NFT collection</h4>
+                <h4 id="NFTname">{`NFT Name: #`+erc721list.tokenId}</h4>
+                <p id="NFTprice">0.01eth</p>
             </div>
         </Link>
         
