@@ -1,28 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 function Popup(props) {
-  const { onClose } = props;
+  const { onClose, handleUsername, currentUsername } = props;
+  const [newusername, setNewusername] = useState(currentUsername);
+
+  const hadleNewusername = (event) => {
+    setNewusername(event.target.value)
+  }
 
   return (
-    <Container
-      onClick={() => {
-        onClose(false);
-      }}
-    >
-      팝업입니다.
+    <Container>
+      <Title>Change Username</Title>
+      <Newname>
+        <label for="usernamebox">username</label>
+        <input type="text" id="usernamebox" 
+        placeholder="Write new username" 
+        value={newusername} 
+        onChange={hadleNewusername}>
+        </input>
+      </Newname>
+      <Confirm onClick={() => {
+        handleUsername(newusername)
+        onClose(false)
+        }}>Confirm</Confirm>
     </Container>
   );
 }
 
 const Container = styled.div`
   position: fixed;
-  left: 100px;
-  right: 100px;
-  top: 100px;
-  bottom: 100px;
-  z-index:100;
-  background: black;
+  left: 30vw;
+  right: 30vw;
+  top: 10vw;
+  bottom: 20vw;
+  background: white;
+  border-style: solid;
+  width: 30vw;
+  height: 20vw;
+`
+
+const Title = styled.div`
+  position: relative;
+  margin: auto;
+  width: 20vw;
+  top: 30px;
+`
+
+const Newname = styled.div`
+  position: relative;
+  margin: auto;
+  width: 10vw;
+  top: 80px;
+`
+
+const Confirm = styled.button`
+  position: relative;
+  margin: auto;
+  width: 8vw;
+  top: 80px;
+  left: 160px
 `
 
 export default Popup;
