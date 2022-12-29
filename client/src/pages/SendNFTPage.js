@@ -55,7 +55,7 @@ function SendNftPage({ account }) {
         {/* {erc721list.slice(0).reverse().map((e) => (
           <Item tokenURI={e.tokenURI} name={e.name} collection={e.collection} price={e.price} tokenId={e.tokenId} />
         ))} */}
-        <Erc721 erc721list={erc721list} />
+        <Erc721 account={account} erc721list={erc721list} />
       </div>
     </div>
   )

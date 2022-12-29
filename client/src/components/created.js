@@ -61,15 +61,15 @@ function Created({ account }) {
 
   }
 
-  return(
+  return (
     <section className="created__NFT">
       <div className="created__menuline"></div>
       <div className="created__NFT--search">
-        <input className="created__NFT--searchbox" 
-        type="text" 
-        placeholder="Search by name" 
-        value={searchNFT} 
-        onChange={handleChange} 
+        <input className="created__NFT--searchbox"
+          type="text"
+          placeholder="Search by name"
+          value={searchNFT}
+          onChange={handleChange}
         />
         {/* 검색 버튼을 누르면 searchNFT와 일치하는 NFT만 나오게 설정 */}
         <button className="created__NFT--search__button" value="search" onClick={handleFilteredNFT}>search</button>
@@ -92,11 +92,11 @@ function Created({ account }) {
             </div>
           )
         })} */}
-        
+
         {/* NFT가 없을 경우 <div className="creacted__noitems">No created items to display</div>*/}
       </div>
     </section>
-  ) 
+  )
 
 }
 

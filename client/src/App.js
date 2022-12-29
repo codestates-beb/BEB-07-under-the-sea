@@ -10,7 +10,6 @@ import Footer from './components/Footer';
 import DetailsPage from './pages/DetailsPage';
 import SendNFTPage from './pages/SendNFTPage';
 import axios from 'axios'
-import Erc721 from './components/Erc721';
 
 function App() {
   const [account, setAccount] = useState("");
@@ -61,7 +60,7 @@ function App() {
           <Route path=':id' />
         </Route>
         <Route path='/sendnft' element={<SendNFTPage account={account} />} />
-        <Route element={<Erc721 account={account} />} />
+
       </Routes>
       <Footer />
     </BrowserRouter>
