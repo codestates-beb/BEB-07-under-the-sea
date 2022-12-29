@@ -2,7 +2,6 @@ import { React, useState, useEffect, useRef } from "react";
 import "./MainPage.css";
 import { Link } from "react-router-dom";
 import { tokenContract } from "../erc721Abi";
-import data from "../resources/dummyNFT";
 import Item from "../components/NFTitem";
 
 
