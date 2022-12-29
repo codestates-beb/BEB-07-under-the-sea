@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Collected from "../components/collected";
 import Created from "../components/created";
-import { useState } from "react";
 import profile from "../assets/3.png"
 import spurs from "../assets/spurs.jpeg"
 import ethereum1 from "../assets/ethereum1.png"
@@ -9,16 +8,49 @@ import "./MyPage.css"
 import { useParams } from "react-router-dom";
 import { tokenContract } from "../erc721Abi";
 import TokenList from "../components/TokenList";
-import styled from "styled-components";
 import Popup from "../components/popup";
+import axios from "axios"
 
 function MyPage({ account }, props) {
   const [erc721list, setErc721list] = useState([]);
   const [popup, handlePopup] = useState(false)
-  const [username, setUsername] = useState("Unnamed");
+  const [username, setUsername] = useState("Unnamed"); // 서버에서 불러오면 필요 없음
 
-  const handleUsername = (name) => {
-    setUsername(name);
+  useEffect(() => {
+    getUsername(account);
+  }, [])
+
+  const getUsername = async (account) => {
+    try{
+      const userinfo = await axios.get(`http://localhost:8080/userinfo/${account}`)
+      console.log(userinfo.data)
+      if(userinfo.data){
+        setUsername(userinfo.data.username)
+      }else{
+        console.error("ERROR: GET 요청이 잘못되었거나 데이터베이스에 존재하지 않습니다.")
+      }
+    }catch(err){
+      console.log(err)
+    }
+  }
+
+
+  const update_username = async (username) => {
+    try{
+      console.log(username);
+      const updateUsername = await axios.put('http://localhost:8080/userinfo/updateusername',
+      {wallet_address: account, username: username}
+      )
+      console.log(updateUsername);
+    }catch(err){
+      console.log(err)
+    }
+  }
+
+  const handleUsername = async (name) => {
+    await setUsername(name);
+    // 서버와 연결해서 디비에도 저장
+    await update_username(name);
   }
 
   const getErc721Token = async () => {
