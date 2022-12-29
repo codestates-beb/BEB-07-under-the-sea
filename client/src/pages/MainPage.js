@@ -2,7 +2,6 @@ import { React, useState, useEffect, useRef } from "react";
 import "./MainPage.css";
 import { Link } from "react-router-dom";
 import { tokenContract } from "../erc721Abi";
-import TokenList from "../components/TokenList";
 import data from "../resources/dummyNFT";
 import Item from "../components/NFTitem";
 
@@ -61,8 +60,8 @@ export default function MainPage() {
         </div>
       </div>
       <div id="row2">
-        {data.slice(0).reverse().map((e) => (
-          <Item imgUrl={e.imgUrl} name={e.name} collection={e.collection} price={e.price} id={e.id} />
+        {erc721list.slice(0).reverse().map((e) => (
+          <Item tokenURI={e.tokenURI} name={e.name} collection={e.collection} price={e.price} tokenId={e.tokenId} />
         ))}
       </div>
       {/* <div>
