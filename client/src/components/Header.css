@@ -4,10 +4,11 @@
     position:fixed;
     top:0;
     z-index: 3;
-    width: 100%;
+    width: 100vw;
     height: 130px;
     color: black;
-    background-color: white;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.774), rgb(255, 255, 255))
+    
 }
 #menuItems{
     left: 40%;
@@ -43,7 +44,7 @@
     font-weight: bold;
     font-size: 16px;
     margin: 45px;
-    background-color: white;
+    background-color: rgba(255,255,255,0x );
     border-style: none;
 }
 
