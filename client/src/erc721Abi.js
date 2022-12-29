@@ -1,7 +1,7 @@
 // src/erc721Abi.js
 import Web3 from 'web3';
 
-const erc721Abi = [
+export const erc721Abi = [
     {
         "inputs": [],
         "stateMutability": "nonpayable",

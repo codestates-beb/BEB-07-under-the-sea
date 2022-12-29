@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import DetailsPage from './pages/DetailsPage';
 import SendNFTPage from './pages/SendNFTPage';
 import axios from 'axios'
+import Erc721 from './components/Erc721';
 
 function App() {
   const [account, setAccount] = useState("");
@@ -29,17 +30,17 @@ function App() {
   };
 
   const check_userinfo = async (address) => {
-    try{
+    try {
       const userinfo = await axios.get(`http://localhost:8080/userinfo/${address}`)
       console.log(userinfo.data)
-      if(!userinfo.data){
-        const createUser = await axios.post(`http://localhost:8080/userinfo/createuser`, {wallet_address: address})
+      if (!userinfo.data) {
+        const createUser = await axios.post(`http://localhost:8080/userinfo/createuser`, { wallet_address: address })
         console.log(createUser)
-        if(!createUser.data){
+        if (!createUser.data) {
           console.error("Error: POST request 양식이 올바르지 않습니다.")
         }
       }
-    }catch(err){
+    } catch (err) {
       console.log(err)
     }
   }
@@ -50,7 +51,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header check_userinfo={check_userinfo}/>
+      <Header check_userinfo={check_userinfo} />
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/mypage/:account' element={<MyPage account={account} />} />
@@ -59,7 +60,8 @@ function App() {
         <Route path='/details' element={<DetailsPage />}>
           <Route path=':id' />
         </Route>
-        <Route path='/sendnft' element={<SendNFTPage/>}/>
+        <Route path='/sendnft' element={<SendNFTPage account={account} />} />
+        <Route element={<Erc721 account={account} />} />
       </Routes>
       <Footer />
     </BrowserRouter>
