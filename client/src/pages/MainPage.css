@@ -59,4 +59,37 @@
     background-color: blue;
     cursor: pointer;
 }
+.snow{
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    animation: snow 10s linear  infinite;
+}
 
+@keyframes snow {
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    20%{
+        opacity: 1;
+        transform: translate(-15px, 20vh);
+    }
+    40%{
+        opacity: 1;
+        transform: translate(15px, 40vh);
+    }
+    60%{
+        opacity: 1;
+        transform: translate(-15px, 60vh);
+    }
+    80%{
+        opacity: 1;
+        transform: translate(15px, 80vh);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(100vh);
+    }
+}
