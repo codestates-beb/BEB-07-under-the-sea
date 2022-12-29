@@ -5,6 +5,8 @@
     padding:20px;
     border-radius: 23px;
     width: 90vw;
+    z-index: 3;
+    background-color: white;
 }
 
 #detailContents{
