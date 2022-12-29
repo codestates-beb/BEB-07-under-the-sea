@@ -471,7 +471,7 @@ export const erc721Abi = [
     }
 ]
 
-const contractAddress = "0xf92cdF46B9DbC6D64dF80e17B2bab1077A9975B9";
+export const contractAddress = "0xf92cdF46B9DbC6D64dF80e17B2bab1077A9975B9";
 
 export const web3 = new Web3(window.ethereum);
 
