@@ -12,13 +12,13 @@ function Popup(props) {
   return (
     <Container>
       <Title>Change Username</Title>
-      <Newname>
+      <Newname >
         <label for="usernamebox">username</label>
-        <input type="text" id="usernamebox" 
+        <Input type="text" id="usernamebox" 
         placeholder="Write new username" 
         value={newusername} 
         onChange={hadleNewusername}>
-        </input>
+        </Input>
       </Newname>
       <Confirm onClick={() => {
         handleUsername(newusername)
@@ -36,30 +36,35 @@ const Container = styled.div`
   bottom: 20vw;
   background: white;
   border-style: solid;
-  width: 30vw;
-  height: 20vw;
+  width: 600px;
+  height: 400px;
+  z-index: 1;
 `
 
 const Title = styled.div`
   position: relative;
-  margin: auto;
+  left: 165px;
   width: 20vw;
   top: 30px;
 `
 
 const Newname = styled.div`
   position: relative;
-  margin: auto;
-  width: 10vw;
-  top: 80px;
+  left: 230px;
+  width: 155px;
+  top: 130px;
 `
 
 const Confirm = styled.button`
   position: relative;
-  margin: auto;
-  width: 8vw;
-  top: 80px;
-  left: 160px
+  width: 155px;
+  top: 130px;
+  left: 230px
+`
+
+const Input = styled.input`
+  position: relative;
+  
 `
 
 export default Popup;

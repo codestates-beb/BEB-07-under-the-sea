@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import "./created.css";
 import json from "../resources/dummyNFT";
+import { tokenContract } from "../erc721Abi";
+import TokenList from "../components/TokenList";
 
-function Created() {
+function Created({ account }) {
 
+  const [erc721list, setErc721list] = useState([]);
   const [searchNFT, setSearchNFT] = useState()
   const [filteredNFT, setFilteredNFT] = useState(json)
+
+  useEffect(() => {
+    getErc721Token();
+  }, [])
 
   const handleChange = (event) => {
     setSearchNFT(event.target.value)
@@ -18,6 +25,31 @@ function Created() {
     })
     console.log(result)
     setFilteredNFT(result)
+  }
+
+  const getErc721Token = async () => {
+    const name = await tokenContract.methods.name().call();
+    const symbol = await tokenContract.methods.symbol().call();
+    const totalSupply = await tokenContract.methods.totalSupply().call();
+
+    let arr = [];
+    for (let i = 1; i <= totalSupply; i++) {
+      arr.push(i);
+    }
+    for (let tokenId of arr) {
+      let tokenOwner = await tokenContract.methods
+        .ownerOf(tokenId)
+        .call();
+      if (String(tokenOwner).toLowerCase() === account) {
+        let tokenURI = await tokenContract.methods
+          .tokenURI(tokenId)
+          .call();
+        setErc721list((prevState) => {
+          return [...prevState, { name, symbol, tokenId, tokenURI }];
+        });
+      }
+    }
+
   }
 
   return(
@@ -35,7 +67,9 @@ function Created() {
       </div>
       <div className="created__NFT--list">
         {/* 필터링 결과 적용하여 아무 item 이 없을 경우 noitem이 나오도록 설정 */}
-        {filteredNFT.map((el) => {
+        <TokenList erc721list={erc721list} />
+        
+        {/* {filteredNFT.map((el) => {
           return (
             <div className="created__NFT--item">
               <div className="created__NFT--itemImg">
@@ -46,7 +80,7 @@ function Created() {
               <div id="price">{el.price}</div>
             </div>
           )
-        })}
+        })} */}
         
         {/* NFT가 없을 경우 <div className="creacted__noitems">No created items to display</div>*/}
       </div>
