@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./created.css";
 import json from "../resources/dummyNFT";
 import { tokenContract } from "../erc721Abi";
 import TokenList from "../components/TokenList";
+import Item from "../components/NFTitem"
 
 function Created({ account }) {
 
@@ -11,7 +11,16 @@ function Created({ account }) {
   const [searchNFT, setSearchNFT] = useState()
   const [filteredNFT, setFilteredNFT] = useState(json)
 
-  useEffect(() => {
+  const useDidMountEffect = (func, deps) => {
+    const didMount = useRef(false);
+
+    useEffect(() => {
+      if (didMount.current) func();
+      else didMount.current = true;
+    }, deps);
+  };
+
+  useDidMountEffect(() => {
     getErc721Token();
   }, [])
 
@@ -67,8 +76,10 @@ function Created({ account }) {
       </div>
       <div className="created__NFT--list">
         {/* 필터링 결과 적용하여 아무 item 이 없을 경우 noitem이 나오도록 설정 */}
-        <TokenList erc721list={erc721list} />
-        
+        {erc721list.slice(0).reverse().map((e) => (
+          <Item tokenURI={e.tokenURI} name={e.name} collection={e.collection} price={e.price} tokenId={e.tokenId} />
+        ))}
+
         {/* {filteredNFT.map((el) => {
           return (
             <div className="created__NFT--item">
