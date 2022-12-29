@@ -9,9 +9,12 @@ import "./MyPage.css"
 import { useParams } from "react-router-dom";
 import { tokenContract } from "../erc721Abi";
 import TokenList from "../components/TokenList";
+import styled from "styled-components";
+import Popup from "../components/popup";
 
-function MyPage({ account }) {
+function MyPage({ account }, props) {
   const [erc721list, setErc721list] = useState([]);
+  const [popup, handlePopup] = useState(false)
 
   const getErc721Token = async () => {
     const name = await tokenContract.methods.name().call();
@@ -86,7 +89,9 @@ function MyPage({ account }) {
 
         <div className="myInfo__detail">
           <div className="myInfo__detail--username">
-            Anonymous{/*사용자 이름*/}
+            Anonymous{/*사용자 이름 수정예정!!*/  }
+            <button onClick={() => {handlePopup(true)}}>change username</button>
+            {popup ? <Popup onClose={handlePopup} /> : ""}
           </div>
           <div className="myInfo__detail--account">
             <img className="ethereum1" src={ethereum1} alt="이더리움1" width="25" height="25" />
