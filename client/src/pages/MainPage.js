@@ -22,7 +22,7 @@ export default function MainPage() {
       let tokenOwner = await tokenContract.methods
         .ownerOf(tokenId)
         .call();
-      if (String(tokenOwner).toLowerCase()) {
+      if (String(tokenOwner) === "0x805352d058Ad7d74F5268440fd48B2C6837F6a33") {
         let tokenURI = await tokenContract.methods
           .tokenURI(tokenId)
           .call();
@@ -50,7 +50,7 @@ export default function MainPage() {
 
   return (
     <div className="mainpage">
-      <Snowfall/>
+      <Snowfall />
       <div id="row">
         <div className="intro">
           <h1>Explore, collect, and sell NFTs</h1>
