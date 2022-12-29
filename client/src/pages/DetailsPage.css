@@ -5,4 +5,11 @@
     place-items: center;
     padding-top: 150px;
     padding-bottom: 150px;
+
+}
+
+#loading{
+    position: absolute;
+    top:45%;
+    z-index: 0;
 }
