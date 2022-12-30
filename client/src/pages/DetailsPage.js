@@ -1,12 +1,12 @@
 import { React, useState, useEffect, useRef } from "react";
 import { tokenContract } from "../erc721Abi";
-import {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom"
 import "./DetailsPage.css"
 import NFTdetail from "../components/NFTdetail"
 import LoadingIndicator from "../components/LoadingIndicator";
 
-const DetailsPage = ()=>{
-    const [erc721list, setErc721list] = useState([]);
+const DetailsPage = ({ account }) => {
+  const [erc721list, setErc721list] = useState([]);
   const getErc721Token = async () => {
 
     const name = await tokenContract.methods.name().call();
@@ -26,7 +26,7 @@ const DetailsPage = ()=>{
           .tokenURI(tokenId)
           .call();
         setErc721list((prevState) => {
-            
+
           return [...prevState, { name, symbol, tokenId, tokenURI }];
         });
       }
@@ -38,7 +38,7 @@ const DetailsPage = ()=>{
 
     useEffect(() => {
       if (didMount.current) func();
-      else{
+      else {
         didMount.current = true
       }
     }, deps);
@@ -48,19 +48,19 @@ const DetailsPage = ()=>{
     getErc721Token();
   }, []);
 
-    let id = Number(useParams().id);
-    let filteredNFT = erc721list.filter((e) => e.tokenId===id)
-    return(
-        <div id="detailsContainer">
-            <div id="loading">
-                <LoadingIndicator/>
-            </div>
-            {filteredNFT.map((el)=>{
-                return <NFTdetail imgUrl={el.tokenURI} name={el.name} collection={el.collection} price={el.price} id={el.tokenId} description={el.description}/>
-            })}
-            
-        </div>
-    )
+  let id = Number(useParams().id);
+  let filteredNFT = erc721list.filter((e) => e.tokenId === id)
+  return (
+    <div id="detailsContainer">
+      <div id="loading">
+        <LoadingIndicator />
+      </div>
+      {filteredNFT.map((el) => {
+        return <NFTdetail imgUrl={el.tokenURI} name={el.name} collection={el.collection} price={el.price} id={el.tokenId} description={el.description} account={account} tokenAddress={el.address} erc721list={erc721list} />
+      })}
+
+    </div>
+  )
 }
 
 

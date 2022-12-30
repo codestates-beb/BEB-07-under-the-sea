@@ -56,7 +56,7 @@ function App() {
         <Route path='/mypage/:account' element={<MyPage account={account} />} />
         <Route path='/mintpage' element={<MintPage account={account} />} />
         <Route path='/marketplace' element={<MarketPlacePage />} />
-        <Route path='/details' element={<DetailsPage />}>
+        <Route path='/details' element={<DetailsPage account={account} />}>
           <Route path=':id' />
         </Route>
         <Route path='/sendnft' element={<SendNFTPage account={account} />} />
