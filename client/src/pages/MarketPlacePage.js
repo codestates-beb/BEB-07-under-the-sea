@@ -67,14 +67,11 @@ function MarketPlacePage() {
     getErc721Token();
   }, []);
 
-  const handlePageChange = (page) => {
-    setPage(page);
-  };
-
   return (
     
     <div id="marketplace">
       <div classMame="title">
+        {console.log(erc721list)};
         <h1>Explore collections</h1>
       </div>
       <div>

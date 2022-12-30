@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CategoryFilter from "./CategoryFilter";
 
-import "./FAQ.css";
+import "./Categories.css";
 
 const categories = [
   {
@@ -22,7 +22,7 @@ const categories = [
   },
 ];
 
-const FAQ = () => {
+const Categories = () => {
   const [category, setCatecory] = useState("All");
 
   return (
@@ -40,4 +40,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default Categories;
