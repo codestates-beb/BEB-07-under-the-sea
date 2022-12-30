@@ -4,7 +4,6 @@ import { tokenContract } from "../erc721Abi";
 
 function Erc721({ account, erc721list }) {
     const [to, setTo] = useState("");
-
     const sendToken = async (tokenAddr, tokenId) => {
         try {
             if (!account) return
