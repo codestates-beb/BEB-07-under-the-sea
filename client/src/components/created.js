@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import "./created.css";
 import json from "../resources/dummyNFT";
 import { tokenContract } from "../erc721Abi";
-import TokenList from "../components/TokenList";
 import Item from "../components/NFTitem"
 
 function Created({ account }) {
