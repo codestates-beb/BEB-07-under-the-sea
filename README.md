@@ -1,5 +1,41 @@
 # 🧜‍♀️ Under the Sea 🐬
+<h2> 팀원 소개 </h2>
+<table>
+ <tr>
+  <td align='center'>이름</td>
+  <td align='center'>역할</td>
+  <td align='center'>GitHub</td>
+  <td align='center'>E-Mail</td>
+ </tr>
+ 
+ <tr>
+  <td align='center'>김현태</td>
+  <td align='center'>DB, Back-end</td>
+  <td align='center'><a href="https://github.com/hyuntae384">hyuntae384</a></td>
+  <td align='center'>hyuntae384@gmail.com</td>
+ </tr>   
+ 
+ <tr>
+  <td align='center'>박정연</td>
+  <td align='center'>Design, Front-end</td>
+  <td align='center'><a href="https://github.com/yonnie-park">yonnie-park</a></td>
+  <td align='center'>juon0805@gmail.com</td>
+ </tr>
 
+  <tr>
+  <td align='center'>백준석</td>
+  <td align='center'>Front-end, Back-end</td>
+  <td align='center'><a href="https://github.com/bajnsk">bajnsk</a></td>
+  <td align='center'>baekjunseok63@gmail.com</td>
+ </tr>
+ 
+  <tr>
+  <td align='center'>이동원</td>
+  <td align='center'>Front-end, Contract</td>
+  <td align='center'><a href="https://github.com/fromdwlee">fromdwlee</a></td>
+  <td align='center'>desgod0108@gmail.com</td>
+ </tr>
+</table>
 <h2> 주요 기능 </h2>
 <h3> 메인 화면 </h3>
 발행된 모든 NFT를 web3로 불러옵니다. 불러온 NFT의 컴포넌트를 확인할 수 있습니다.
@@ -45,40 +81,4 @@ Explore 버튼을 누르면 카테고리별로 분류된 페이지로, Create �
 ![Solidity](https://img.shields.io/badge/Solidity-%23363636.svg?style=for-the-badge&logo=solidity&logoColor=white)
 
 
-<h2> 팀원 소개 </h2>
-<table>
- <tr>
-  <td align='center'>이름</td>
-  <td align='center'>역할</td>
-  <td align='center'>GitHub</td>
-  <td align='center'>E-Mail</td>
- </tr>
- 
- <tr>
-  <td align='center'>김현태</td>
-  <td align='center'>DB, Back-end</td>
-  <td align='center'><a href="https://github.com/hyuntae384">hyuntae384</a></td>
-  <td align='center'>hyuntae384@gmail.com</td>
- </tr>   
- 
- <tr>
-  <td align='center'>박정연</td>
-  <td align='center'>Design, Front-end</td>
-  <td align='center'><a href="https://github.com/yonnie-park">yonnie-park</a></td>
-  <td align='center'>juon0805@gmail.com</td>
- </tr>
 
-  <tr>
-  <td align='center'>백준석</td>
-  <td align='center'>Front-end, Back-end</td>
-  <td align='center'><a href="https://github.com/bajnsk">bajnsk</a></td>
-  <td align='center'>baekjunseok63@gmail.com</td>
- </tr>
- 
-  <tr>
-  <td align='center'>이동원</td>
-  <td align='center'>Front-end, Contract</td>
-  <td align='center'><a href="https://github.com/fromdwlee">fromdwlee</a></td>
-  <td align='center'>desgod0108@gmail.com</td>
- </tr>
-</table>
